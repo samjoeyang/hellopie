@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  HelloPieApp
+
+  Created by SamjoeYang on 2022/6/21.
+  
+*/
+"Username"    = "用户名";
+"Mobile"      = "手机号码";
+"Password"    = "密码";
+"Login"       = "登录";
+"AlertTitle"  = "提示";
+"Cancel"      = "取消";
+"Guess the Car Logo" = "猜猜看汽车的标志";

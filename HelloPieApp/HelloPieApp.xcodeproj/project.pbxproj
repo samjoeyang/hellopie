@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852637002861FCE3008B650A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852636FE2861FCE3008B650A /* Localizable.strings */; };
+		852637032861FE1B008B650A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852637012861FE1B008B650A /* Localizable.strings */; };
 		859329CC286191B600EE57C0 /* HelloPieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329CB286191B600EE57C0 /* HelloPieAppApp.swift */; };
 		859329CE286191B600EE57C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329CD286191B600EE57C0 /* ContentView.swift */; };
 		859329D0286191B800EE57C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859329CF286191B800EE57C0 /* Assets.xcassets */; };
@@ -17,7 +19,7 @@
 		859329EC286191B900EE57C0 /* HelloPieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329EB286191B900EE57C0 /* HelloPieAppUITests.swift */; };
 		859329EE286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329ED286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift */; };
 		859329FD2861925F00EE57C0 /* GuessTheCarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */; };
-		859329FF28619E4600EE57C0 /* carlogoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329FE28619E4600EE57C0 /* carlogoStruct.swift */; };
+		859329FF28619E4600EE57C0 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329FE28619E4600EE57C0 /* DataObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		852636FF2861FCE3008B650A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		852637022861FE1B008B650A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		859329C8286191B600EE57C0 /* HelloPieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859329CB286191B600EE57C0 /* HelloPieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieAppApp.swift; sourceTree = "<group>"; };
 		859329CD286191B600EE57C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +55,7 @@
 		859329EB286191B900EE57C0 /* HelloPieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieAppUITests.swift; sourceTree = "<group>"; };
 		859329ED286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCarLogoView.swift; sourceTree = "<group>"; };
-		859329FE28619E4600EE57C0 /* carlogoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carlogoStruct.swift; sourceTree = "<group>"; };
+		859329FE28619E4600EE57C0 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		852636F32861F24A008B650A /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				852636FE2861FCE3008B650A /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		852636F72861F29C008B650A /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				852637012861FE1B008B650A /* Localizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
 		859329BF286191B600EE57C0 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +125,12 @@
 				859329CB286191B600EE57C0 /* HelloPieAppApp.swift */,
 				859329CD286191B600EE57C0 /* ContentView.swift */,
 				859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */,
-				859329FE28619E4600EE57C0 /* carlogoStruct.swift */,
+				859329FE28619E4600EE57C0 /* DataObjects.swift */,
 				859329CF286191B800EE57C0 /* Assets.xcassets */,
 				859329D4286191B800EE57C0 /* Persistence.swift */,
 				859329D6286191B800EE57C0 /* HelloPieApp.xcdatamodeld */,
+				852636F72861F29C008B650A /* zh-Hans.lproj */,
+				852636F32861F24A008B650A /* en.lproj */,
 				859329D1286191B800EE57C0 /* Preview Content */,
 			);
 			path = HelloPieApp;
@@ -225,6 +247,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 859329BF286191B600EE57C0;
 			productRefGroup = 859329C9286191B600EE57C0 /* Products */;
@@ -244,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				859329D3286191B800EE57C0 /* Preview Assets.xcassets in Resources */,
+				852637032861FE1B008B650A /* Localizable.strings in Resources */,
+				852637002861FCE3008B650A /* Localizable.strings in Resources */,
 				859329D0286191B800EE57C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +298,7 @@
 				859329CE286191B600EE57C0 /* ContentView.swift in Sources */,
 				859329CC286191B600EE57C0 /* HelloPieAppApp.swift in Sources */,
 				859329D8286191B800EE57C0 /* HelloPieApp.xcdatamodeld in Sources */,
-				859329FF28619E4600EE57C0 /* carlogoStruct.swift in Sources */,
+				859329FF28619E4600EE57C0 /* DataObjects.swift in Sources */,
 				859329FD2861925F00EE57C0 /* GuessTheCarLogoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +334,25 @@
 			targetProxy = 859329E8286191B900EE57C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		852636FE2861FCE3008B650A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				852636FF2861FCE3008B650A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		852637012861FE1B008B650A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				852637022861FE1B008B650A /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		859329EF286191B900EE57C0 /* Debug */ = {

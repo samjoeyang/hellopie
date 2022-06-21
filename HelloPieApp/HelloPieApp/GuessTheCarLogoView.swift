@@ -11,7 +11,10 @@ struct GuessTheCarLogoView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
+//    @State private var carlogoList = CarLogoCollection[]
+    
     @State private var carlogos = ["audi","benz","bmw","citroen","ford","lexus","volvo"].shuffled()
+    
     @State private var correctAnswer = Int.random(in: 0...2)
     
     var body: some View {

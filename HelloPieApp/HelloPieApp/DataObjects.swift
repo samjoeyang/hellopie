@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct catlogo {
+struct CarLogo: Codable, Hashable,Identifiable {
+    var id = UUID()
     var enName:String
     var cnName:String
     var img:String
@@ -17,6 +18,12 @@ struct catlogo {
         self.cnName=cn
         self.img=img
     }
+    
+    static let defaultCarLogo = CarLogo(en:"Car Band",cn: "汽车品牌",img: "default")
+}
+
+struct CarLogoCollection: Codable {
+    var sample : [CarLogo]
 }
 
 //{
