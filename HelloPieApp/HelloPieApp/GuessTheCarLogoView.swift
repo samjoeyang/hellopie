@@ -11,7 +11,7 @@ struct GuessTheCarLogoView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     
-//    @State private var carlogoList = CarLogoCollection[]
+    @State private var carlogoList = CarLogoCollection(sample: [CarLogo.defaultCarLogo])
     
     @State private var carlogos = ["audi","benz","bmw","citroen","ford","lexus","volvo"].shuffled()
     

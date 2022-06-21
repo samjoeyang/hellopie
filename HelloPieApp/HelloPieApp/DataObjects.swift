@@ -24,6 +24,10 @@ struct CarLogo: Codable, Hashable,Identifiable {
 
 struct CarLogoCollection: Codable {
     var sample : [CarLogo]
+//    static let default = [
+//        CarLogo(en: "Audi", cn: "奥迪", img: "audi"),
+//        CarLogo(en: "Benz", cn: "奔驰", img: "benz"),
+//    ]
 }
 
 //{
