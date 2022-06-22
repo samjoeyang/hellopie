@@ -10,5 +10,15 @@
 "Password"    = "密码";
 "Login"       = "登录";
 "AlertTitle"  = "提示";
+"OK"          = "OK";
+"Confirm"     = "确认";
+"Submit"      = "提交";
 "Cancel"      = "取消";
+"Continue"    = "继续";
+"Correct"     = "正确";
+"Wrong"       = "错误";
 "Guess the Car Logo" = "猜猜看汽车的标志";
+"Tap the logo of" = "点击以下品牌的车标";
+"Your score is %lld" = "你现在的成绩是 %lld";
+"Score: %lld"   = "成绩: %lld";
+"Your name is %@" = "你的名字是 %@";
