@@ -20,6 +20,8 @@
 		859329EE286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329ED286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift */; };
 		859329FD2861925F00EE57C0 /* GuessTheCarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */; };
 		859329FF28619E4600EE57C0 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329FE28619E4600EE57C0 /* DataObjects.swift */; };
+		859622942863451A004E029C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859622932863451A004E029C /* WelcomeView.swift */; };
+		85962296286345F7004E029C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85962295286345F7004E029C /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		859329ED286191B900EE57C0 /* HelloPieAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCarLogoView.swift; sourceTree = "<group>"; };
 		859329FE28619E4600EE57C0 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		859622932863451A004E029C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		85962295286345F7004E029C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,9 @@
 			children = (
 				859329CB286191B600EE57C0 /* HelloPieAppApp.swift */,
 				859329CD286191B600EE57C0 /* ContentView.swift */,
+				859622932863451A004E029C /* WelcomeView.swift */,
 				859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */,
+				85962295286345F7004E029C /* Utils.swift */,
 				859329FE28619E4600EE57C0 /* DataObjects.swift */,
 				859329CF286191B800EE57C0 /* Assets.xcassets */,
 				859329D4286191B800EE57C0 /* Persistence.swift */,
@@ -300,6 +306,8 @@
 				859329D8286191B800EE57C0 /* HelloPieApp.xcdatamodeld in Sources */,
 				859329FF28619E4600EE57C0 /* DataObjects.swift in Sources */,
 				859329FD2861925F00EE57C0 /* GuessTheCarLogoView.swift in Sources */,
+				859622942863451A004E029C /* WelcomeView.swift in Sources */,
+				85962296286345F7004E029C /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

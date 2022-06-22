@@ -68,7 +68,7 @@ struct ContentView: View {
                             
                         } label: {
                             Text(miniApps[index])
-                                .font(.title3)
+                                .font(.title3.weight(.heavy))
                                 .foregroundColor(.white)
                                 .padding(20)
                         }
@@ -80,6 +80,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Hello,Pie")
         }
         .padding(10)
         

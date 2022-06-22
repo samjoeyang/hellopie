@@ -15,7 +15,7 @@ struct HelloPieAppApp: App {
         WindowGroup {
             GuessTheCarLogoView()
             //            ContentView()
-            //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
         }
     }

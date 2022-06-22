@@ -64,7 +64,8 @@ struct GuessTheCarLogoView: View {
             
             ZStack {
                 RadialGradient(stops: [
-                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+//                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+                    .init(color: Color(red: 1.0, green: 1.0, blue: 1.0), location: 0.3),
                     .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3)
                 ], center: .top, startRadius: 200, endRadius: 700)
                 .ignoresSafeArea()
@@ -80,13 +81,13 @@ struct GuessTheCarLogoView: View {
                     VStack(spacing: 15) {
                         VStack {
                             Text("Tap the logo of")
-                                .foregroundColor(.black)
+//                                .foregroundColor(.black)
                                 .foregroundStyle(.secondary)
                                 .font(.subheadline.weight(.heavy))
                             
                             Text(carlogos[correctAnswer].uppercased())
                                 .font(.largeTitle.weight(.semibold))
-                                .foregroundColor(.black)
+//                                .foregroundColor(.black)
                         }
                         
                         ForEach(0..<3) { number in
@@ -118,12 +119,13 @@ struct GuessTheCarLogoView: View {
                 }
                 .padding()
             }
-            .navigationBarTitle(
+            .navigationTitle(
                 Text("Guess the Car Logo")
                     .foregroundColor(.white)
                     .font(.largeTitle.bold())
 //               , displayMode: .inline
-            ).foregroundColor(.white)
+            )
+            .navigationBarTitleDisplayMode(.automatic)
             .navigationBarHidden(false)
 //            navigationBarBackButtonHidden()
             .alert(scoreTitle, isPresented: $showingScore) {
@@ -132,7 +134,10 @@ struct GuessTheCarLogoView: View {
                 Text("Your score is \(scoreNumber)")
                 //            Text(String(localized: "\(selection.name)", table: "Categories", comment: "Category"))
             }
+            
+            WelcomeView()
         }
+        .phoneOnlyNavigationView()
     }
     
     func updateNavigationBarColor(textColor:Color,bgColor:Color) {
