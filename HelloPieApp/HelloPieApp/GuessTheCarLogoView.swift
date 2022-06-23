@@ -57,24 +57,24 @@ struct GuessTheCarLogoView: View {
     @State private var scoreTitle:LocalizedStringKey = ""
     @State private var scoreNumber:Int = 0
     
-//    @State private var carlogoList = CarLogoCollection(sample: [CarLogo.defaultCarLogo])
+    //    @State private var carlogoList = CarLogoCollection(sample: [CarLogo.defaultCarLogo])
     
     @State private var carlogos = ["audi","benz","bmw","citroen","ford","lexus","volvo"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
-//    init() {
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-//        UINavigationBar.appearance().barTintColor = UIColor(navColor)
-//        UINavigationBar.appearance().backgroundColor = UIColor(navColor)
-//    }
+    //    init() {
+    //        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+    //        UINavigationBar.appearance().barTintColor = UIColor(navColor)
+    //        UINavigationBar.appearance().backgroundColor = UIColor(navColor)
+    //    }
     
     var body: some View {
         NavigationView{
             
             ZStack {
                 RadialGradient(stops: [
-                    //                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+//                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
                     .init(color: Color(red: 1.0, green: 1.0, blue: 1.0), location: 0.3),
                     .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3)
                 ], center: .top, startRadius: 200, endRadius: 700)
@@ -84,9 +84,9 @@ struct GuessTheCarLogoView: View {
                 VStack {
                     Spacer()
                     
-                    //                    Text("Guess the Car Logo")
-                    //                        .font(.largeTitle.bold())
-                    //                        .foregroundColor(.white)
+//                    Text("Guess the Car Logo")
+//                        .font(.largeTitle.bold())
+//                        .foregroundColor(.white)
                     
                     VStack(spacing: 15) {
                         VStack {
@@ -129,12 +129,7 @@ struct GuessTheCarLogoView: View {
                 }
                 .padding()
             }
-            .navigationTitle(
-                Text("Guess the Car Logo")
-                    .foregroundColor(.white)
-                    .font(.largeTitle.bold())
-                //               , displayMode: .inline
-            )
+            .navigationTitle("Guess the Car Logo")
             .navigationBarTitleDisplayMode(.automatic)
             .navigationBarHidden(false)
             //            navigationBarBackButtonHidden()
@@ -145,14 +140,14 @@ struct GuessTheCarLogoView: View {
                     } label: {
                         Text("Edit")
                     }
-//                    Button(action: {showEditView = true}) {
-//                        Label("Edit", systemImage: "square.and.pencil")
-//                    }
-//                    .fullScreenCover(isPresented:$showEditView,content: {
-//                        CarLogoListView()
-//                    }).onTapGesture {
-//                        showEditView = true
-//                    }
+                    //                    Button(action: {showEditView = true}) {
+                    //                        Label("Edit", systemImage: "square.and.pencil")
+                    //                    }
+                    //                    .fullScreenCover(isPresented:$showEditView,content: {
+                    //                        CarLogoListView()
+                    //                    }).onTapGesture {
+                    //                        showEditView = true
+                    //                    }
                     
                 }
                 //                ToolbarItem {
@@ -251,14 +246,14 @@ struct GuessTheCarLogoView_Previews: PreviewProvider {
 struct CarLogoListView:View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
-//        NSSortDescriptor(keyPath: \CarLogosTable.enName, ascending: true),
-//        NSSortDescriptor(keyPath: \CarLogosTable.cnName, ascending: true),
-//        NSSortDescriptor(keyPath: \CarLogosTable.img, ascending: true),
+        //        NSSortDescriptor(keyPath: \CarLogosTable.enName, ascending: true),
+        //        NSSortDescriptor(keyPath: \CarLogosTable.cnName, ascending: true),
+        //        NSSortDescriptor(keyPath: \CarLogosTable.img, ascending: true),
         SortDescriptor(\.enName),
         SortDescriptor(\.cnName),
         SortDescriptor(\.img)
     ]) var carlogolist: FetchedResults<CarLogo>
-
+    
     @State private var itemIndex:Int = 0
     @State private var itemsList = [Int]()
     
@@ -267,53 +262,59 @@ struct CarLogoListView:View {
     
     var body: some View {
         NavigationView {
-//            List(students) { student in
-//                    Text(student.name ?? "Unknown")
-//                }
+            //            List(students) { student in
+            //                    Text(student.name ?? "Unknown")
+            //                }
             List  {
-                //                NavigationLink{
+                
+                //                Section {
+                
+                //                    if isLogin == false {
+                //                        Button("Login") {
+                //                            isShowSheetView.toggle()
+                //                        }
+                //                        .sheet(isPresented: $isShowSheetView) {
+                //                            LoginView()
+                //                        }
+                //                    } else {
+                //                        Text("Login Info: \(storeUser.username)")
+                //                        Button("Logout") {
+                //                            UserDefaults.standard.removeObject(forKey: "UserData")
+                //                            username = ""
                 //
-                //                } label: {
-                //                    HStack {
-                //                        Image(systemName: "plus")
-                //                        Text("Add")
-                //                        Spacer()
-                //
+                //                            isLogin=false
+                //                        }
+                //                    }
+                
+                //                    NavigationLink{
+                //                        Text("NavigationLink Content")
+                //                    } label:{
+                //                        Text("NavigationLink")
+                //                            .padding(0)
                 //                    }
                 //                }
-                Section {
-                    
-                    //                    if isLogin == false {
-                    //                        Button("Login") {
-                    //                            isShowSheetView.toggle()
-                    //                        }
-                    //                        .sheet(isPresented: $isShowSheetView) {
-                    //                            LoginView()
-                    //                        }
-                    //                    } else {
-                    //                        Text("Login Info: \(storeUser.username)")
-                    //                        Button("Logout") {
-                    //                            UserDefaults.standard.removeObject(forKey: "UserData")
-                    //                            username = ""
-                    //
-                    //                            isLogin=false
-                    //                        }
-                    //                    }
-                    
-                    NavigationLink{
-                        Text("NavigationLink Content")
-                    } label:{
-                        Text("NavigationLink")
-                            .padding(0)
-                    }
-                }
                 
-//                Button("Add Item [Count:\(String(itemsList.count))]") {
-//                    itemsList.append(itemIndex)
-//                    itemIndex += 1
-//                }
-                ForEach(itemsList,id:\.self) {
-                    Text("Row \($0)")
+                //                Button("Add Item [Count:\(String(itemsList.count))]") {
+                //                    itemsList.append(itemIndex)
+                //                    itemIndex += 1
+                //                }
+                ForEach(carlogolist,id:\.self) { carlogo in
+                    NavigationLink {
+                        CarLogoDetailView(carlogo: carlogo)
+                    } label: {
+                        HStack {
+                            //                            EmojiRatingView(rating: book.rating)
+                            //                                .font(.largeTitle)
+                            
+                            VStack(alignment: .leading) {
+                                Text(carlogo.cnName ?? "Unknown")
+                                    .font(.headline)
+                                
+                                Text(carlogo.enName ?? "Unknown")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
                 }
                 .onDelete(perform: removeRows)
             }
@@ -325,25 +326,27 @@ struct CarLogoListView:View {
                         Label("Add", systemImage: "plus.circle")
                     }
                     .sheet(isPresented: $isShowSheetView) {
-                        AddCarLogoContentView()
+                        CarLogoAddView()
                     }
-
+                    
                 }
             }
         }
     }
     
-    private func addItem() {
-        
-        
-    }
     func removeRows(at offsets: IndexSet) {
-        itemsList.remove(atOffsets: offsets)
-        if itemsList.count == 0 {
-            itemIndex = 0
-        } else {
-            itemIndex -= 1
+//        itemsList.remove(atOffsets: offsets)
+//        if itemsList.count == 0 {
+//            itemIndex = 0
+//        } else {
+//            itemIndex -= 1
+//        }
+        
+        for offset in offsets {
+            let row = carlogolist[offset]
+            moc.delete(row)
         }
+//        try? moc.save()
     }
 }
 
@@ -354,13 +357,11 @@ struct CarLogoListView_Previews: PreviewProvider {
     }
 }
 
-struct AddCarLogoContentView:View{
-    //    @ObservedObject var data:CarLogos
+struct CarLogoAddView:View{
+//    @ObservedObject var data:CarLogosData
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-    
-    
-    @Environment(\.dismiss) var dismiss
+//    @Environment(\.dismiss) var dismiss
     
     @State private var enName = ""
     @State private var cnName = ""
@@ -397,34 +398,89 @@ struct AddCarLogoContentView:View{
                         let trimmedCn=self.cnName.trimmingCharacters(in:.whitespaces)
                         guard trimmedCn.isEmpty == false else { return }
                         
-//                        let newcarlogo = CarLogo(context: self.moc)
-//                        newcarlogo.enName = trimmedEn
-//                        newcarlogo.cnName = trimmedCn
-//                        newcarlogo.img    = self.img
-//
-//                        try? self.moc.save()
+                        let newcarlogo = CarLogo(context: self.moc)
+                        newcarlogo.enName = trimmedEn
+                        newcarlogo.cnName = trimmedCn
+                        newcarlogo.img    = self.img
+
+                        try? self.moc.save()
+
+//                        let newcarlogo2 = CarLogoData(en:trimmedEn,cn:trimmedCn,img: img)
+//                        data.carlogos.append(newcarlogo2)
                         
-//                        let carlogo = CarLogo(en:trimmedEn,cn:trimmedCn,img: img)
-//                        print(carlogo)
-                        //                    data.carlogos.append(carlogo)
-                        
-//                        dismiss()
                         self.presentationMode.wrappedValue.dismiss()
+//                        dismiss()
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        dismiss()
-//                        self.presentationMode.wrappedValue.dismiss()
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
         }
     }
 }
-//struct AddCarLogoContentView_Previews: PreviewProvider {
+
+struct CarLogoDetailView: View {
+    let carlogo: CarLogo
+    
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
+    @State private var showingDeleteAlert = false
+    
+    var body: some View {
+        ScrollView {
+            ZStack(alignment: .bottomTrailing) {
+                Image(carlogo.img ?? "Fantasy")
+                    .resizable()
+                    .scaledToFit()
+                
+                Text(carlogo.enName?.uppercased() ?? "FANTASY")
+                    .font(.caption)
+                    .fontWeight(.black)
+                    .padding(8)
+                    .foregroundColor(.white)
+                    .background(.black.opacity(0.75))
+                    .clipShape(Capsule())
+                    .offset(x: -5, y: -5)
+            }
+            
+            Text(carlogo.cnName ?? "Unknown Author")
+                .font(.title)
+                .foregroundColor(.secondary)
+            
+//            Text(carlogo.description ?? "No review")
+//                .padding()
+            
+//            RatingView(rating: .constant(Int(book.rating)))
+//                .font(.largeTitle)
+        }
+        .navigationTitle(carlogo.enName ?? "Unknown Logo")
+        .navigationBarTitleDisplayMode(.inline)
+        .alert("Delete item?", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: removeItem)
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure?")
+        }
+        .toolbar {
+            Button {
+                showingDeleteAlert = true
+            } label: {
+                Label("Delete this book", systemImage: "trash")
+            }
+        }
+    }
+    func removeItem() {
+        moc.delete(carlogo)
+        dismiss()
+    }
+}
+
+//struct DetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        AddCarLogoContentView()
+//        DetailView()
 //            .environment(\.locale, .init(identifier: "zh-Hans"))
 //    }
 //}
