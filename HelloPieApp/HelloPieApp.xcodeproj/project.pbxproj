@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		852637002861FCE3008B650A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852636FE2861FCE3008B650A /* Localizable.strings */; };
 		852637032861FE1B008B650A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852637012861FE1B008B650A /* Localizable.strings */; };
+		85542B5C286407B500BCC1FF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85542B5B286407B500BCC1FF /* DataController.swift */; };
 		859329CC286191B600EE57C0 /* HelloPieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329CB286191B600EE57C0 /* HelloPieAppApp.swift */; };
 		859329CE286191B600EE57C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859329CD286191B600EE57C0 /* ContentView.swift */; };
 		859329D0286191B800EE57C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859329CF286191B800EE57C0 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		852636FF2861FCE3008B650A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		852637022861FE1B008B650A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		85542B5B286407B500BCC1FF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		859329C8286191B600EE57C0 /* HelloPieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		859329CB286191B600EE57C0 /* HelloPieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieAppApp.swift; sourceTree = "<group>"; };
 		859329CD286191B600EE57C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -127,13 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				859329CB286191B600EE57C0 /* HelloPieAppApp.swift */,
-				859329CD286191B600EE57C0 /* ContentView.swift */,
 				859622932863451A004E029C /* WelcomeView.swift */,
+				859329CD286191B600EE57C0 /* ContentView.swift */,
 				859329FC2861925F00EE57C0 /* GuessTheCarLogoView.swift */,
-				85962295286345F7004E029C /* Utils.swift */,
 				859329FE28619E4600EE57C0 /* DataObjects.swift */,
-				859329CF286191B800EE57C0 /* Assets.xcassets */,
+				85542B5B286407B500BCC1FF /* DataController.swift */,
 				859329D4286191B800EE57C0 /* Persistence.swift */,
+				85962295286345F7004E029C /* Utils.swift */,
+				859329CF286191B800EE57C0 /* Assets.xcassets */,
 				859329D6286191B800EE57C0 /* HelloPieApp.xcdatamodeld */,
 				852636F72861F29C008B650A /* zh-Hans.lproj */,
 				852636F32861F24A008B650A /* en.lproj */,
@@ -304,6 +307,7 @@
 				859329CE286191B600EE57C0 /* ContentView.swift in Sources */,
 				859329CC286191B600EE57C0 /* HelloPieAppApp.swift in Sources */,
 				859329D8286191B800EE57C0 /* HelloPieApp.xcdatamodeld in Sources */,
+				85542B5C286407B500BCC1FF /* DataController.swift in Sources */,
 				859329FF28619E4600EE57C0 /* DataObjects.swift in Sources */,
 				859329FD2861925F00EE57C0 /* GuessTheCarLogoView.swift in Sources */,
 				859622942863451A004E029C /* WelcomeView.swift in Sources */,

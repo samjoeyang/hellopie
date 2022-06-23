@@ -13,6 +13,9 @@
 "OK"          = "OK";
 "Confirm"     = "确认";
 "Submit"      = "提交";
+"Edit"        = "编辑";
+"Add"         = "添加";
+"Save"        = "保存";
 "Cancel"      = "取消";
 "Continue"    = "继续";
 "Correct"     = "正确";

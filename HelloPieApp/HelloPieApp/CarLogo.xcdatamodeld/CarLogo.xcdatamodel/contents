@@ -3,14 +3,10 @@
     <entity name="CarLogo" representedClassName="CarLogo" syncable="YES" codeGenerationType="class">
         <attribute name="cnName" optional="YES" attributeType="String"/>
         <attribute name="enName" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="img" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-    </entity>
     <elements>
-        <element name="CarLogo" positionX="-54" positionY="0" width="128" height="89"/>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="CarLogo" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

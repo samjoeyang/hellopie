@@ -64,8 +64,8 @@ struct ContentView: View {
                     //                        /*#-code-walkthrough(2.gridElement)*/
                     //                    }
                     ForEach(miniApps.indices, id: \.self) { index in
-                        Button{
-                            
+                        NavigationLink {
+                            GuessTheCarLogoView()
                         } label: {
                             Text(miniApps[index])
                                 .font(.title3.weight(.heavy))

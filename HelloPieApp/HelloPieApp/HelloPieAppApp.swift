@@ -9,13 +9,16 @@ import SwiftUI
 
 @main
 struct HelloPieAppApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
+    @StateObject private var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
             GuessTheCarLogoView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
             //            ContentView()
-                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                            
             
         }
     }
