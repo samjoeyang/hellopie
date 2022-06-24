@@ -2,268 +2,176 @@
 //  ContentView.swift
 //  HelloPie
 //
-//  Created by SamjoeYang on 2022/5/27.
+//  Created by SamjoeYang on 2022/6/24.
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
-    @State private var username : String = ""
-    @State private var password : String = ""
-//    @FocusState private var emailFieldIsFocused = false
-    @State private var nameComponents = PersonNameComponents()
-    @State private var isShowSheetView: Bool = false
-    @State private var showNewView: Bool = false
-    @State private var showEditView: Bool = false
-    @State private var showAddView: Bool = false
-    @State private var showDeleteView: Bool = false
-    @State private var isLogin: Bool = false
-    @State private var storeUser=UserData()
+//    @Environment(\.managedObjectContext) private var viewContext
     
-    @State private var itemIndex:Int = 0
-    @State private var itemsList = [Int]()
-    let decoder = JSONDecoder()
+    @State private var showCarLogoView:Bool=false
+    
+    let columnLayout = Array(repeating: GridItem(), count: 3)
+    
+    @State private var selectedColor=Color.gray
+    
+    let allColors:[Color] = [
+        .pink,
+        .red,
+        .orange,
+        .yellow,
+        .green,
+        .mint,
+        .teal,
+        .cyan,
+        .blue,
+        .indigo,
+        .purple,
+        .brown,
+        .gray
+    ]
+    let miniApps:[String] = [
+        "猜车标",
+        "猜车标",
+        "猜车标猜车标",
+        "猜车标猜车标猜车标猜车标",
+    ]
+    
     
     var body: some View {
-        NavigationView{
-//            ScrollView{
-//                VStack {
-//                    GeometryReader { geo in
-//                        Image(systemName: "ellipsis.circle")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width:geo.size.width * 0.5)
-//                            .frame(width:geo.size.width,height: geo.size.height)
-//                    }
-//                }
-                VStack {
-                    
-                    List{
-                        Section {
-                           
-                            if isLogin == false {
-                                Button("Login") {
-                                    isShowSheetView.toggle()
-                                }
-                                .sheet(isPresented: $isShowSheetView) {
-                                    LoginView()
-                                }
-                            } else {
-                                Text("Login Info: \(storeUser.username)")
-                                Button("Logout") {
-                                    UserDefaults.standard.removeObject(forKey: "UserData")
-                                    username = ""
-                                    
-                                    isLogin=false
-                                }
-                            }
-                            
-                            NavigationLink{
-                                Text("NavigationLink Content")
-                            } label:{
-                                Text("NavigationLink")
+
+            VStack(alignment: .leading) {
+                Text("Hello Pie!")
+                    .foregroundColor(.orange)
+                    .font(.largeTitle.bold())
+                    .shadow(radius: 5)
+                    .padding(10)
+                
+                ScrollView {
+                    LazyVGrid(columns: columnLayout) {
+    //                    ForEach(allColors.indices, id: \.self) { index in
+    //                        Button {
+    //                            selectedColor = allColors[index]
+    //                        } label: {
+    //                            RoundedRectangle(cornerRadius: 4.0)
+    //                                .aspectRatio(1.0, contentMode: ContentMode.fit)
+    //                                .foregroundColor(allColors[index])
+    //                        }
+    //                        .buttonStyle(.plain)
+    //                    }
+                        
+                        
+                        ForEach(miniApps.indices, id: \.self) { index in
+                            Button {
+                                showCarLogoView.toggle()
+                            }label: {
+                                Text(miniApps[index])
+                                    .font(.title3.weight(.heavy))
+                                    .foregroundColor(.white)
                                     .padding(0)
-//                                    .font(.title)
+                                    .shadow(radius: 3)
+                            }
+                            .frame(width: 80, height: 80, alignment: .center)
+                            .background(allColors[index])
+                            .cornerRadius(15)
+                            .shadow(radius: 5)
+                            .buttonStyle(.plain)
+                            .fullScreenCover(isPresented:$showCarLogoView,content: {
+                                GuessTheCarLogoView()
+                            }).onTapGesture {
+                                showCarLogoView = true
                             }
                         }
                         
-                        Button("Add Item [Count:\(String(itemsList.count))]") {
-                            itemsList.append(itemIndex)
-                            itemIndex += 1
-                        }
-                        ForEach(itemsList,id:\.self) {
-                            Text("Row \($0)")
-                        }
-                        .onDelete(perform: removeRows)
                     }
-                }
-                .onAppear {
-                    print(isLogin)
-                    if let userdata = UserDefaults.standard.data(forKey: "UserData") {
-                        if let user = try? decoder.decode(UserData.self,from: userdata) {
-                            storeUser = user
-                            username = user.username
-                            isLogin = true
-                            print(user)
-                        }
-                    }
-                }
-                .onDisappear {
-                    UserDefaults.standard.removeObject(forKey: "UserData")
-                }
-//        } // End of ScrollView
-            
-                // 编辑按钮
-                .toolbar {
-                    EditButton()
+                    
                 }
                 
-                .navigationBarTitle("HelloPie")
-                .navigationBarItems(
-                    leading: {
-                        Menu {
-                            Button(action: {showNewView.toggle()}) {
-                                Label("New", systemImage: "pencil")
-                            }
-                            Button(action: {showEditView.toggle()}) {
-                                Label("Edit", systemImage: "square.and.pencil")
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis.circle")
-                        }
-                    }(),
-                    trailing: {
-                        Menu {
-                            Button(action: {showAddView.toggle()}) {
-                                Label("Add", systemImage: "plus")
-                            }
-                            Button(action: {showDeleteView.toggle()}) {
-                                Label("Delete", systemImage: "trash")
-                            }
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }()
-                )
             }
-
-    }
-    
-    func removeRows(at offsets: IndexSet) {
-        itemsList.remove(atOffsets: offsets)
-        if itemsList.count == 0 {
-            itemIndex = 0
-        } else {
-            itemIndex -= 1
-        }
+            .padding(10)
     }
 }
 
+//struct ContentView: View {
+//    @Environment(\.managedObjectContext) private var viewContext
+//
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Item>
+//
+//    var body: some View {
+//        NavigationView {
+//            List {
+//                ForEach(items) { item in
+//                    NavigationLink {
+//                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//                    } label: {
+//                        Text(item.timestamp!, formatter: itemFormatter)
+//                    }
+//                }
+//                .onDelete(perform: deleteItems)
+//            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    EditButton()
+//                }
+//                ToolbarItem {
+//                    Button(action: addItem) {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
+//            }
+//            Text("Select an item")
+//        }
+//    }
+//
+//    private func addItem() {
+//        withAnimation {
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//}
+//
+//private let itemFormatter: DateFormatter = {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .short
+//    formatter.timeStyle = .medium
+//    return formatter
+//}()
+//
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environment(\.locale, .init(identifier: "zh-Hans"))
-    }
-}
-
-// Example about Activity
-struct ActivityContentView :View {
-    @StateObject var data = Activities()
-    @State private var addingNewActivity = false
-    
-    var body: some View {
-        NavigationView{
-            
-            List (data.activities) { activity in
-                NavigationLink{
-                    ActivityDetailContentView(data:data,activity:activity)
-                    
-                } label: {
-                    HStack {
-                        Text(activity.title)
-                        Spacer()
-                        Text(String(activity.completionCount))
-                    }
-                }
-            }
-            .navigationTitle("Habito")
-            .toolbar {
-                Button {
-                    addingNewActivity.toggle()
-                    
-                } label: {
-                    Label("Add new activity", systemImage:"plus")
-                }
-            }
-            .sheet(isPresented:$addingNewActivity){
-                AddActivityContentView(data:data)
-            }
-        }
-    }
-    
-    func color(for activity: Activity)-> Color{
-        if activity.completionCount<3{
-            return .red
-        } else if activity.completionCount<10{
-            return .orange
-        } else if activity.completionCount<20{
-            return .green
-        } else if activity.completionCount<50{
-            return.blue
-        } else {
-            return .indigo
-        }
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
         
     }
 }
-struct ActivityContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityContentView()
-            .environment(\.locale, .init(identifier: "zh-Hans"))
-    }
-}
-
-
-struct AddActivityContentView:View{
-    @ObservedObject var data:Activities
-    @State private var title = ""
-    @State private var description = ""
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        NavigationView{
-            Form {
-                TextField("Title", text:$title)
-                TextField("Description", text:$description)
-                
-            }
-            .navigationTitle("Add Activity")
-            .toolbar {
-                Button("Save"){
-                    let trimmedTitle=title.trimmingCharacters(in:.whitespaces)
-                    guard trimmedTitle.isEmpty == false else { return }
-                    let activity = Activity(title:trimmedTitle,description: description)
-                    data.activities.append(activity)
-                    
-                    dismiss()
-                    
-                }
-            }
-        }
-    }
-}
-
-
-struct ActivityDetailContentView: View {
-    @ObservedObject var data : Activities
-    var activity: Activity
-    
-    var body: some View {
-        List {
-            Section {
-                if activity.description.isEmpty==false {
-                    Text(activity.description)
-                }
-            }
-            Section {
-                Text("Completion count:\(activity.completionCount)")
-                Button("Mark Completed"){
-                    // More code to come
-                    var newActivity=activity
-                    newActivity.completionCount+=1
-                    if let index=data.activities.firstIndex(of:activity) {
-                        data.activities[index]=newActivity
-                    }
-                }
-            }
-        }
-        .navigationTitle(activity.title)
-
-    }
-}
-//struct ActivityDetailContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ActivityDetailContentView(data: Activities(), activity: Activity.example)
-//            .environment(\.locale, .init(identifier: "zh-Hans"))
-//    }
-//}

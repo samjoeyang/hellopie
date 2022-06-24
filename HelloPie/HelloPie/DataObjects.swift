@@ -2,63 +2,75 @@
 //  DataObjects.swift
 //  HelloPie
 //
-//  Created by SamjoeYang on 2022/5/29.
+//  Created by SamjoeYang on 2022/6/24.
 //
 
-//import Foundation
-import SwiftUI
+import Foundation
 
-struct UserData: Codable {
-    
-//    enum CodingKeys: CodingKey {
-//        case username,pasword,realname,nickname,mobile,email,token,group,address
-//    }
-    
-    var username: String = ""
-    var password: String = ""
-    
-    var realname: String = ""
-    var nickname: String = ""
-    var mobile: String = ""
-    var email: String = ""
-    
-    var token: String = ""
-    var group: String = "-1"
-    var address:[String] = []
-    
-    static let defaultUser = UserData(nickname:"Guset",group:"-1")
-}
-
-struct UserDataCollection: Codable {
-    var sample : [UserData]
-}
-
-
-
-struct Activity: Codable, Identifiable, Equatable {
+struct CarLogoData: Codable, Identifiable, Hashable  {
     var id = UUID()
-    var title: String
-    var description: String
-    var completionCount=0
-
-    static let example = Activity(title:"Example activity", description: "This is a test activity.")
+    var enName:String
+    var cnName:String
+    var img:String
+    
+    init(en:String,cn:String,img:String) {
+        self.enName=en
+        self.cnName=cn
+        self.img=img
+    }
+    
+    static let defaultCarLogo = CarLogoData(en:"Car Band",cn: "汽车品牌",img: "default")
 }
-                                  
-class Activities:ObservableObject {
-        @Published var activities:[Activity]{
-            didSet {
-                if let encoded=try? JSONEncoder().encode(activities){
-                    UserDefaults.standard.set(encoded,forKey:"Activities")
-                }
+
+struct CarLogoDataCollection: Codable {
+    var sample : [CarLogoData]
+    static let `default` = [
+        CarLogoData(en: "Audi", cn: "奥迪", img: "audi"),
+        CarLogoData(en: "Benz", cn: "奔驰", img: "benz"),
+    ]
+}
+
+class CarLogosData:ObservableObject {
+    @Published var carlogos:[CarLogoData] {
+        didSet {
+            if let encoded=try? JSONEncoder().encode(carlogos){
+                UserDefaults.standard.set(encoded,forKey:"CarLogos")
             }
         }
-        init(){
-            if let saved=UserDefaults.standard.data(forKey:"Activities"){
-                if let decoded = try? JSONDecoder().decode([Activity].self,from:saved) {
-                    activities=decoded
-                    return
-                }
-            }  
-            activities = []
-        }
     }
+    init(){
+        if let saved=UserDefaults.standard.data(forKey:"CarLogos"){
+            if let decoded = try? JSONDecoder().decode([CarLogoData].self,from:saved) {
+                carlogos=decoded
+                return
+            }
+        }
+        carlogos = []
+    }
+}
+
+//{
+//    "enName":"Audi";
+//    "cnName":"奥迪";
+//    "img":"audi";
+//},{
+//    "enName":"Benz";
+//    "cnName":"奔驰";
+//    "img":"benz";
+//},{
+//    "enName":"BMW";
+//    "cnName":"宝马";
+//    "img":"bmw";
+//},{
+//    "enName":"Citroen";
+//    "cnName":"雪铁龙";
+//    "img":"citroen";
+//},{
+//    "enName":"Ford";
+//    "cnName":"雪福特龙";
+//    "img":"ford";
+//},{
+//    "enName":"Ford";
+//    "cnName":"雪福特龙";
+//    "img":"ford";
+//}

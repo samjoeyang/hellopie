@@ -7,74 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85A73E4F284642F90061F124 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A73E4E284642F90061F124 /* Utils.swift */; };
-		85BC70EA2840A9FF00E942C4 /* HelloPieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC70E92840A9FF00E942C4 /* HelloPieApp.swift */; };
-		85BC70EC2840A9FF00E942C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC70EB2840A9FF00E942C4 /* ContentView.swift */; };
-		85BC70EE2840AA0300E942C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85BC70ED2840AA0300E942C4 /* Assets.xcassets */; };
-		85BC70F12840AA0300E942C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85BC70F02840AA0300E942C4 /* Preview Assets.xcassets */; };
-		85BC70FB2840AA0300E942C4 /* HelloPieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC70FA2840AA0300E942C4 /* HelloPieTests.swift */; };
-		85BC71052840AA0300E942C4 /* HelloPieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC71042840AA0300E942C4 /* HelloPieUITests.swift */; };
-		85BC71072840AA0300E942C4 /* HelloPieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC71062840AA0300E942C4 /* HelloPieUITestsLaunchTests.swift */; };
-		85BC71142840B50D00E942C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC71132840B50D00E942C4 /* LoginView.swift */; };
-		85BC71172841145800E942C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85BC71192841145800E942C4 /* Localizable.strings */; };
-		85BC711C284395F000E942C4 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC711B284395F000E942C4 /* DataObjects.swift */; };
-		85BC711E28439A0F00E942C4 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BC711D28439A0F00E942C4 /* DataFetcher.swift */; };
-		85DF069E2843B410001FE0C2 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF069D2843B410001FE0C2 /* test.swift */; };
+		853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */; };
+		853D4E612865DD1600BC5073 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E602865DD1600BC5073 /* ContentView.swift */; };
+		853D4E632865DD1A00BC5073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E622865DD1A00BC5073 /* Assets.xcassets */; };
+		853D4E662865DD1A00BC5073 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E652865DD1A00BC5073 /* Preview Assets.xcassets */; };
+		853D4E682865DD1A00BC5073 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E672865DD1A00BC5073 /* Persistence.swift */; };
+		853D4E6B2865DD1A00BC5073 /* HelloPie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E692865DD1A00BC5073 /* HelloPie.xcdatamodeld */; };
+		853D4E752865DD1A00BC5073 /* HelloPieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E742865DD1A00BC5073 /* HelloPieTests.swift */; };
+		853D4E7F2865DD1A00BC5073 /* HelloPieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E7E2865DD1A00BC5073 /* HelloPieUITests.swift */; };
+		853D4E812865DD1A00BC5073 /* HelloPieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E802865DD1A00BC5073 /* HelloPieUITestsLaunchTests.swift */; };
+		853D4E8E2865DDED00BC5073 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E8D2865DDED00BC5073 /* Utils.swift */; };
+		853D4E902865DE1500BC5073 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E8F2865DE1500BC5073 /* DataController.swift */; };
+		853D4E952865DEF400BC5073 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E932865DEF400BC5073 /* Localizable.strings */; };
+		853D4E972865DF0C00BC5073 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E962865DF0C00BC5073 /* Localizable.strings */; };
+		853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E982865DF3900BC5073 /* DataObjects.swift */; };
+		853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9A2865DF6500BC5073 /* WelcomeView.swift */; };
+		853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		85BC70F72840AA0300E942C4 /* PBXContainerItemProxy */ = {
+		853D4E712865DD1A00BC5073 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 85BC70DE2840A9FF00E942C4 /* Project object */;
+			containerPortal = 853D4E532865DD1600BC5073 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 85BC70E52840A9FF00E942C4;
+			remoteGlobalIDString = 853D4E5A2865DD1600BC5073;
 			remoteInfo = HelloPie;
 		};
-		85BC71012840AA0300E942C4 /* PBXContainerItemProxy */ = {
+		853D4E7B2865DD1A00BC5073 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 85BC70DE2840A9FF00E942C4 /* Project object */;
+			containerPortal = 853D4E532865DD1600BC5073 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 85BC70E52840A9FF00E942C4;
+			remoteGlobalIDString = 853D4E5A2865DD1600BC5073;
 			remoteInfo = HelloPie;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		85A73E4E284642F90061F124 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		85BC70E62840A9FF00E942C4 /* HelloPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		85BC70E92840A9FF00E942C4 /* HelloPieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieApp.swift; sourceTree = "<group>"; };
-		85BC70EB2840A9FF00E942C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		85BC70ED2840AA0300E942C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85BC70F02840AA0300E942C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		85BC70F62840AA0300E942C4 /* HelloPieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85BC70FA2840AA0300E942C4 /* HelloPieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieTests.swift; sourceTree = "<group>"; };
-		85BC71002840AA0300E942C4 /* HelloPieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85BC71042840AA0300E942C4 /* HelloPieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieUITests.swift; sourceTree = "<group>"; };
-		85BC71062840AA0300E942C4 /* HelloPieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		85BC71132840B50D00E942C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		85BC71182841145800E942C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		85BC711A2841145B00E942C4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		85BC711B284395F000E942C4 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
-		85BC711D28439A0F00E942C4 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
-		85DF069D2843B410001FE0C2 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		853D4E5B2865DD1600BC5073 /* HelloPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieApp.swift; sourceTree = "<group>"; };
+		853D4E602865DD1600BC5073 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		853D4E622865DD1A00BC5073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		853D4E652865DD1A00BC5073 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		853D4E672865DD1A00BC5073 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		853D4E6A2865DD1A00BC5073 /* HelloPie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HelloPie.xcdatamodel; sourceTree = "<group>"; };
+		853D4E702865DD1A00BC5073 /* HelloPieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		853D4E742865DD1A00BC5073 /* HelloPieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieTests.swift; sourceTree = "<group>"; };
+		853D4E7A2865DD1A00BC5073 /* HelloPieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloPieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		853D4E7E2865DD1A00BC5073 /* HelloPieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieUITests.swift; sourceTree = "<group>"; };
+		853D4E802865DD1A00BC5073 /* HelloPieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		853D4E8D2865DDED00BC5073 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		853D4E8F2865DE1500BC5073 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		853D4E942865DEF400BC5073 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		853D4E962865DF0C00BC5073 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		853D4E982865DF3900BC5073 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		853D4E9A2865DF6500BC5073 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCarLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		85BC70E32840A9FF00E942C4 /* Frameworks */ = {
+		853D4E582865DD1600BC5073 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70F32840AA0300E942C4 /* Frameworks */ = {
+		853D4E6D2865DD1A00BC5073 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70FD2840AA0300E942C4 /* Frameworks */ = {
+		853D4E772865DD1A00BC5073 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,78 +89,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		85BC70DD2840A9FF00E942C4 = {
+		853D4E522865DD1600BC5073 = {
 			isa = PBXGroup;
 			children = (
-				85BC70E82840A9FF00E942C4 /* HelloPie */,
-				85BC70F92840AA0300E942C4 /* HelloPieTests */,
-				85BC71032840AA0300E942C4 /* HelloPieUITests */,
-				85BC70E72840A9FF00E942C4 /* Products */,
+				853D4E5D2865DD1600BC5073 /* HelloPie */,
+				853D4E732865DD1A00BC5073 /* HelloPieTests */,
+				853D4E7D2865DD1A00BC5073 /* HelloPieUITests */,
+				853D4E5C2865DD1600BC5073 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		85BC70E72840A9FF00E942C4 /* Products */ = {
+		853D4E5C2865DD1600BC5073 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85BC70E62840A9FF00E942C4 /* HelloPie.app */,
-				85BC70F62840AA0300E942C4 /* HelloPieTests.xctest */,
-				85BC71002840AA0300E942C4 /* HelloPieUITests.xctest */,
+				853D4E5B2865DD1600BC5073 /* HelloPie.app */,
+				853D4E702865DD1A00BC5073 /* HelloPieTests.xctest */,
+				853D4E7A2865DD1A00BC5073 /* HelloPieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		85BC70E82840A9FF00E942C4 /* HelloPie */ = {
+		853D4E5D2865DD1600BC5073 /* HelloPie */ = {
 			isa = PBXGroup;
 			children = (
-				85BC70E92840A9FF00E942C4 /* HelloPieApp.swift */,
-				85BC70EB2840A9FF00E942C4 /* ContentView.swift */,
-				85DF069D2843B410001FE0C2 /* test.swift */,
-				85BC711B284395F000E942C4 /* DataObjects.swift */,
-				85BC711D28439A0F00E942C4 /* DataFetcher.swift */,
-				85BC71132840B50D00E942C4 /* LoginView.swift */,
-				85BC71192841145800E942C4 /* Localizable.strings */,
-				85A73E4E284642F90061F124 /* Utils.swift */,
-				85BC70ED2840AA0300E942C4 /* Assets.xcassets */,
-				85BC70EF2840AA0300E942C4 /* Preview Content */,
+				853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */,
+				853D4E9A2865DF6500BC5073 /* WelcomeView.swift */,
+				853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */,
+				853D4E602865DD1600BC5073 /* ContentView.swift */,
+				853D4E622865DD1A00BC5073 /* Assets.xcassets */,
+				853D4E672865DD1A00BC5073 /* Persistence.swift */,
+				853D4E8D2865DDED00BC5073 /* Utils.swift */,
+				853D4E8F2865DE1500BC5073 /* DataController.swift */,
+				853D4E982865DF3900BC5073 /* DataObjects.swift */,
+				853D4E692865DD1A00BC5073 /* HelloPie.xcdatamodeld */,
+				853D4E912865DEC400BC5073 /* en.lproj */,
+				853D4E922865DECE00BC5073 /* zh-Hans.lpro */,
+				853D4E642865DD1A00BC5073 /* Preview Content */,
 			);
 			path = HelloPie;
 			sourceTree = "<group>";
 		};
-		85BC70EF2840AA0300E942C4 /* Preview Content */ = {
+		853D4E642865DD1A00BC5073 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				85BC70F02840AA0300E942C4 /* Preview Assets.xcassets */,
+				853D4E652865DD1A00BC5073 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		85BC70F92840AA0300E942C4 /* HelloPieTests */ = {
+		853D4E732865DD1A00BC5073 /* HelloPieTests */ = {
 			isa = PBXGroup;
 			children = (
-				85BC70FA2840AA0300E942C4 /* HelloPieTests.swift */,
+				853D4E742865DD1A00BC5073 /* HelloPieTests.swift */,
 			);
 			path = HelloPieTests;
 			sourceTree = "<group>";
 		};
-		85BC71032840AA0300E942C4 /* HelloPieUITests */ = {
+		853D4E7D2865DD1A00BC5073 /* HelloPieUITests */ = {
 			isa = PBXGroup;
 			children = (
-				85BC71042840AA0300E942C4 /* HelloPieUITests.swift */,
-				85BC71062840AA0300E942C4 /* HelloPieUITestsLaunchTests.swift */,
+				853D4E7E2865DD1A00BC5073 /* HelloPieUITests.swift */,
+				853D4E802865DD1A00BC5073 /* HelloPieUITestsLaunchTests.swift */,
 			);
 			path = HelloPieUITests;
+			sourceTree = "<group>";
+		};
+		853D4E912865DEC400BC5073 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				853D4E932865DEF400BC5073 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		853D4E922865DECE00BC5073 /* zh-Hans.lpro */ = {
+			isa = PBXGroup;
+			children = (
+				853D4E962865DF0C00BC5073 /* Localizable.strings */,
+			);
+			path = "zh-Hans.lpro";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		85BC70E52840A9FF00E942C4 /* HelloPie */ = {
+		853D4E5A2865DD1600BC5073 /* HelloPie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85BC710A2840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPie" */;
+			buildConfigurationList = 853D4E842865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPie" */;
 			buildPhases = (
-				85BC70E22840A9FF00E942C4 /* Sources */,
-				85BC70E32840A9FF00E942C4 /* Frameworks */,
-				85BC70E42840A9FF00E942C4 /* Resources */,
+				853D4E572865DD1600BC5073 /* Sources */,
+				853D4E582865DD1600BC5073 /* Frameworks */,
+				853D4E592865DD1600BC5073 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -163,69 +187,69 @@
 			);
 			name = HelloPie;
 			productName = HelloPie;
-			productReference = 85BC70E62840A9FF00E942C4 /* HelloPie.app */;
+			productReference = 853D4E5B2865DD1600BC5073 /* HelloPie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		85BC70F52840AA0300E942C4 /* HelloPieTests */ = {
+		853D4E6F2865DD1A00BC5073 /* HelloPieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85BC710D2840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPieTests" */;
+			buildConfigurationList = 853D4E872865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPieTests" */;
 			buildPhases = (
-				85BC70F22840AA0300E942C4 /* Sources */,
-				85BC70F32840AA0300E942C4 /* Frameworks */,
-				85BC70F42840AA0300E942C4 /* Resources */,
+				853D4E6C2865DD1A00BC5073 /* Sources */,
+				853D4E6D2865DD1A00BC5073 /* Frameworks */,
+				853D4E6E2865DD1A00BC5073 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				85BC70F82840AA0300E942C4 /* PBXTargetDependency */,
+				853D4E722865DD1A00BC5073 /* PBXTargetDependency */,
 			);
 			name = HelloPieTests;
 			productName = HelloPieTests;
-			productReference = 85BC70F62840AA0300E942C4 /* HelloPieTests.xctest */;
+			productReference = 853D4E702865DD1A00BC5073 /* HelloPieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		85BC70FF2840AA0300E942C4 /* HelloPieUITests */ = {
+		853D4E792865DD1A00BC5073 /* HelloPieUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85BC71102840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPieUITests" */;
+			buildConfigurationList = 853D4E8A2865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPieUITests" */;
 			buildPhases = (
-				85BC70FC2840AA0300E942C4 /* Sources */,
-				85BC70FD2840AA0300E942C4 /* Frameworks */,
-				85BC70FE2840AA0300E942C4 /* Resources */,
+				853D4E762865DD1A00BC5073 /* Sources */,
+				853D4E772865DD1A00BC5073 /* Frameworks */,
+				853D4E782865DD1A00BC5073 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				85BC71022840AA0300E942C4 /* PBXTargetDependency */,
+				853D4E7C2865DD1A00BC5073 /* PBXTargetDependency */,
 			);
 			name = HelloPieUITests;
 			productName = HelloPieUITests;
-			productReference = 85BC71002840AA0300E942C4 /* HelloPieUITests.xctest */;
+			productReference = 853D4E7A2865DD1A00BC5073 /* HelloPieUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		85BC70DE2840A9FF00E942C4 /* Project object */ = {
+		853D4E532865DD1600BC5073 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					85BC70E52840A9FF00E942C4 = {
-						CreatedOnToolsVersion = 13.4;
+					853D4E5A2865DD1600BC5073 = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
-					85BC70F52840AA0300E942C4 = {
-						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 85BC70E52840A9FF00E942C4;
+					853D4E6F2865DD1A00BC5073 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 853D4E5A2865DD1600BC5073;
 					};
-					85BC70FF2840AA0300E942C4 = {
-						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 85BC70E52840A9FF00E942C4;
+					853D4E792865DD1A00BC5073 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 853D4E5A2865DD1600BC5073;
 					};
 				};
 			};
-			buildConfigurationList = 85BC70E12840A9FF00E942C4 /* Build configuration list for PBXProject "HelloPie" */;
+			buildConfigurationList = 853D4E562865DD1600BC5073 /* Build configuration list for PBXProject "HelloPie" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -234,37 +258,38 @@
 				Base,
 				"zh-Hans",
 			);
-			mainGroup = 85BC70DD2840A9FF00E942C4;
-			productRefGroup = 85BC70E72840A9FF00E942C4 /* Products */;
+			mainGroup = 853D4E522865DD1600BC5073;
+			productRefGroup = 853D4E5C2865DD1600BC5073 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				85BC70E52840A9FF00E942C4 /* HelloPie */,
-				85BC70F52840AA0300E942C4 /* HelloPieTests */,
-				85BC70FF2840AA0300E942C4 /* HelloPieUITests */,
+				853D4E5A2865DD1600BC5073 /* HelloPie */,
+				853D4E6F2865DD1A00BC5073 /* HelloPieTests */,
+				853D4E792865DD1A00BC5073 /* HelloPieUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		85BC70E42840A9FF00E942C4 /* Resources */ = {
+		853D4E592865DD1600BC5073 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC70F12840AA0300E942C4 /* Preview Assets.xcassets in Resources */,
-				85BC71172841145800E942C4 /* Localizable.strings in Resources */,
-				85BC70EE2840AA0300E942C4 /* Assets.xcassets in Resources */,
+				853D4E662865DD1A00BC5073 /* Preview Assets.xcassets in Resources */,
+				853D4E972865DF0C00BC5073 /* Localizable.strings in Resources */,
+				853D4E952865DEF400BC5073 /* Localizable.strings in Resources */,
+				853D4E632865DD1A00BC5073 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70F42840AA0300E942C4 /* Resources */ = {
+		853D4E6E2865DD1A00BC5073 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70FE2840AA0300E942C4 /* Resources */ = {
+		853D4E782865DD1A00BC5073 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,58 +299,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		85BC70E22840A9FF00E942C4 /* Sources */ = {
+		853D4E572865DD1600BC5073 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC711E28439A0F00E942C4 /* DataFetcher.swift in Sources */,
-				85DF069E2843B410001FE0C2 /* test.swift in Sources */,
-				85BC711C284395F000E942C4 /* DataObjects.swift in Sources */,
-				85A73E4F284642F90061F124 /* Utils.swift in Sources */,
-				85BC71142840B50D00E942C4 /* LoginView.swift in Sources */,
-				85BC70EC2840A9FF00E942C4 /* ContentView.swift in Sources */,
-				85BC70EA2840A9FF00E942C4 /* HelloPieApp.swift in Sources */,
+				853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */,
+				853D4E8E2865DDED00BC5073 /* Utils.swift in Sources */,
+				853D4E902865DE1500BC5073 /* DataController.swift in Sources */,
+				853D4E682865DD1A00BC5073 /* Persistence.swift in Sources */,
+				853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */,
+				853D4E612865DD1600BC5073 /* ContentView.swift in Sources */,
+				853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */,
+				853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */,
+				853D4E6B2865DD1A00BC5073 /* HelloPie.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70F22840AA0300E942C4 /* Sources */ = {
+		853D4E6C2865DD1A00BC5073 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC70FB2840AA0300E942C4 /* HelloPieTests.swift in Sources */,
+				853D4E752865DD1A00BC5073 /* HelloPieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85BC70FC2840AA0300E942C4 /* Sources */ = {
+		853D4E762865DD1A00BC5073 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BC71072840AA0300E942C4 /* HelloPieUITestsLaunchTests.swift in Sources */,
-				85BC71052840AA0300E942C4 /* HelloPieUITests.swift in Sources */,
+				853D4E812865DD1A00BC5073 /* HelloPieUITestsLaunchTests.swift in Sources */,
+				853D4E7F2865DD1A00BC5073 /* HelloPieUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		85BC70F82840AA0300E942C4 /* PBXTargetDependency */ = {
+		853D4E722865DD1A00BC5073 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 85BC70E52840A9FF00E942C4 /* HelloPie */;
-			targetProxy = 85BC70F72840AA0300E942C4 /* PBXContainerItemProxy */;
+			target = 853D4E5A2865DD1600BC5073 /* HelloPie */;
+			targetProxy = 853D4E712865DD1A00BC5073 /* PBXContainerItemProxy */;
 		};
-		85BC71022840AA0300E942C4 /* PBXTargetDependency */ = {
+		853D4E7C2865DD1A00BC5073 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 85BC70E52840A9FF00E942C4 /* HelloPie */;
-			targetProxy = 85BC71012840AA0300E942C4 /* PBXContainerItemProxy */;
+			target = 853D4E5A2865DD1600BC5073 /* HelloPie */;
+			targetProxy = 853D4E7B2865DD1A00BC5073 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		85BC71192841145800E942C4 /* Localizable.strings */ = {
+		853D4E932865DEF400BC5073 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				85BC71182841145800E942C4 /* en */,
-				85BC711A2841145B00E942C4 /* zh-Hans */,
+				853D4E942865DEF400BC5073 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -333,7 +359,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		85BC71082840AA0300E942C4 /* Debug */ = {
+		853D4E822865DD1A00BC5073 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -393,7 +419,7 @@
 			};
 			name = Debug;
 		};
-		85BC71092840AA0300E942C4 /* Release */ = {
+		853D4E832865DD1A00BC5073 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -447,7 +473,7 @@
 			};
 			name = Release;
 		};
-		85BC710B2840AA0300E942C4 /* Debug */ = {
+		853D4E852865DD1A00BC5073 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -467,7 +493,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,7 +501,7 @@
 			};
 			name = Debug;
 		};
-		85BC710C2840AA0300E942C4 /* Release */ = {
+		853D4E862865DD1A00BC5073 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -495,7 +521,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -503,7 +529,7 @@
 			};
 			name = Release;
 		};
-		85BC710E2840AA0300E942C4 /* Debug */ = {
+		853D4E882865DD1A00BC5073 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -513,7 +539,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPieTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -522,7 +548,7 @@
 			};
 			name = Debug;
 		};
-		85BC710F2840AA0300E942C4 /* Release */ = {
+		853D4E892865DD1A00BC5073 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -532,7 +558,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPieTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -541,7 +567,7 @@
 			};
 			name = Release;
 		};
-		85BC71112840AA0300E942C4 /* Debug */ = {
+		853D4E8B2865DD1A00BC5073 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -549,7 +575,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPieUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -558,7 +584,7 @@
 			};
 			name = Debug;
 		};
-		85BC71122840AA0300E942C4 /* Release */ = {
+		853D4E8C2865DD1A00BC5073 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -566,7 +592,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = zhenzhidaole.com.HelloPieUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -578,43 +604,56 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85BC70E12840A9FF00E942C4 /* Build configuration list for PBXProject "HelloPie" */ = {
+		853D4E562865DD1600BC5073 /* Build configuration list for PBXProject "HelloPie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85BC71082840AA0300E942C4 /* Debug */,
-				85BC71092840AA0300E942C4 /* Release */,
+				853D4E822865DD1A00BC5073 /* Debug */,
+				853D4E832865DD1A00BC5073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85BC710A2840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPie" */ = {
+		853D4E842865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85BC710B2840AA0300E942C4 /* Debug */,
-				85BC710C2840AA0300E942C4 /* Release */,
+				853D4E852865DD1A00BC5073 /* Debug */,
+				853D4E862865DD1A00BC5073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85BC710D2840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPieTests" */ = {
+		853D4E872865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85BC710E2840AA0300E942C4 /* Debug */,
-				85BC710F2840AA0300E942C4 /* Release */,
+				853D4E882865DD1A00BC5073 /* Debug */,
+				853D4E892865DD1A00BC5073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85BC71102840AA0300E942C4 /* Build configuration list for PBXNativeTarget "HelloPieUITests" */ = {
+		853D4E8A2865DD1A00BC5073 /* Build configuration list for PBXNativeTarget "HelloPieUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85BC71112840AA0300E942C4 /* Debug */,
-				85BC71122840AA0300E942C4 /* Release */,
+				853D4E8B2865DD1A00BC5073 /* Debug */,
+				853D4E8C2865DD1A00BC5073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		853D4E692865DD1A00BC5073 /* HelloPie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				853D4E6A2865DD1A00BC5073 /* HelloPie.xcdatamodel */,
+			);
+			currentVersion = 853D4E6A2865DD1A00BC5073 /* HelloPie.xcdatamodel */;
+			path = HelloPie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 85BC70DE2840A9FF00E942C4 /* Project object */;
+	rootObject = 853D4E532865DD1600BC5073 /* Project object */;
 }

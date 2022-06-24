@@ -2,11 +2,11 @@
   Localizable.strings
   HelloPie
 
-  Created by SamjoeYang on 2022/6/24.
+  Created by SamjoeYang on 2022/5/27.
   
 */
 
-"Username"    = "User Name";
+"Username"    = "UserName";
 "Mobile"      = "Mobile";
 "Password"    = "Password";
 "Login"       = "Login";

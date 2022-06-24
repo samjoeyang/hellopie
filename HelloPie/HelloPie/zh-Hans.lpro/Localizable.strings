@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  HelloPie
+
+  Created by SamjoeYang on 2022/6/24.
+  
+*/
+
+"Username"    = "用户名";
+"Mobile"      = "手机号码";
+"Password"    = "密码";
+"Login"       = "登录";
+"AlertTitle"  = "提示";
+"OK"          = "OK";
+"Confirm"     = "确认";
+"Submit"      = "提交";
+"Edit"        = "编辑";
+"Add"         = "添加";
+"Save"        = "保存";
+"Cancel"      = "取消";
+"Continue"    = "继续";
+"Back"        = "返回";
+"Correct"     = "正确";
+"Wrong"       = "错误";
+"Guess the Car Logo" = "猜猜看汽车的标志";
+"Tap the logo of" = "点击以下品牌的车标";
+"Your score is %lld" = "你现在的成绩是 %lld";
+"Score: %lld"   = "成绩: %lld";
+"Your name is %@" = "你的名字是 %@";
