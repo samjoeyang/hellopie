@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8531FE302869D752007F08E3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE2F2869D752007F08E3 /* ImagePicker.swift */; };
+		8531FE322869D7C6007F08E3 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE312869D7C6007F08E3 /* ImageSaver.swift */; };
+		8531FE342869D7DD007F08E3 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE332869D7DD007F08E3 /* ImageView.swift */; };
+		8531FE362869EB73007F08E3 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */; };
 		853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */; };
 		853D4E612865DD1600BC5073 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E602865DD1600BC5073 /* ContentView.swift */; };
 		853D4E632865DD1A00BC5073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E622865DD1A00BC5073 /* Assets.xcassets */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8531FE2F2869D752007F08E3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8531FE312869D7C6007F08E3 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		8531FE332869D7DD007F08E3 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		853D4E5B2865DD1600BC5073 /* HelloPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieApp.swift; sourceTree = "<group>"; };
 		853D4E602865DD1600BC5073 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +124,10 @@
 				853D4E9A2865DF6500BC5073 /* WelcomeView.swift */,
 				853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */,
 				853D4E602865DD1600BC5073 /* ContentView.swift */,
+				8531FE332869D7DD007F08E3 /* ImageView.swift */,
+				8531FE2F2869D752007F08E3 /* ImagePicker.swift */,
+				8531FE312869D7C6007F08E3 /* ImageSaver.swift */,
+				8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */,
 				853D4E622865DD1A00BC5073 /* Assets.xcassets */,
 				853D4E672865DD1A00BC5073 /* Persistence.swift */,
 				853D4E8D2865DDED00BC5073 /* Utils.swift */,
@@ -303,12 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8531FE342869D7DD007F08E3 /* ImageView.swift in Sources */,
 				853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */,
 				853D4E8E2865DDED00BC5073 /* Utils.swift in Sources */,
 				853D4E902865DE1500BC5073 /* DataController.swift in Sources */,
 				853D4E682865DD1A00BC5073 /* Persistence.swift in Sources */,
 				853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */,
 				853D4E612865DD1600BC5073 /* ContentView.swift in Sources */,
+				8531FE362869EB73007F08E3 /* FileManager-DocumentsDirectory.swift in Sources */,
+				8531FE302869D752007F08E3 /* ImagePicker.swift in Sources */,
+				8531FE322869D7C6007F08E3 /* ImageSaver.swift in Sources */,
 				853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */,
 				853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */,
 				853D4E6B2865DD1A00BC5073 /* HelloPie.xcdatamodeld in Sources */,

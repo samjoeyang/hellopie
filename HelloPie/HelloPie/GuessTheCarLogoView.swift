@@ -379,6 +379,15 @@ struct CarLogoAddView:View{
     @State private var img    = ""
     @State private var description    = ""
     
+    @State private var showingImagePicker:Bool=false
+    @State private var image: Image?
+    @State private var inputImage: UIImage?
+    @State private var processedImage: UIImage?
+    
+    let context = CIContext()
+    
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
+    
     var body: some View {
         NavigationView{
             Form {
@@ -386,8 +395,36 @@ struct CarLogoAddView:View{
                     TextField("English Name", text:$enName)
                     TextField("Chinese Name", text:$cnName)
                 }
-                Section {
-                    TextField("Car Logo image", text:$img)
+                Section ("Select a picture") {
+//                    TextField("Car Logo image", text:$img)
+                    ZStack {
+//                        Rectangle()
+//                            .fill(.white)
+//                            .frame(width:200,height: 200, alignment: .center)
+
+                        Text("Tap to select a picture")
+                            .foregroundColor(.gray)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                            .shadow(radius: 10)
+
+                        image?
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: .infinity, height: 200, alignment: .center)
+                    }
+                    .padding(0)
+                    .frame(width: .infinity,height:200, alignment: .center)
+                    .onTapGesture {
+                        showingImagePicker = true
+                    }
+                    
+                }
+                .padding(0)
+                .onChange(of: inputImage) { _ in loadImage() }
+                .sheet(isPresented: $showingImagePicker,onDismiss: loadImage) {
+                    ImagePicker(image: $inputImage)
                 }
                 Section (
                     content:{
@@ -413,6 +450,8 @@ struct CarLogoAddView:View{
                         newcarlogo.enName = trimmedEn
                         newcarlogo.cnName = trimmedCn
                         newcarlogo.img    = self.img
+                        
+                        print(self.image)
 
                         try? self.moc.save()
 
@@ -430,6 +469,28 @@ struct CarLogoAddView:View{
                 }
             }
         }
+    }
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+
+        image = Image(uiImage: inputImage)
+    }
+    func saveImage() {
+        do {
+//            let url = getDocumentsDirectory().appendingPathComponent("message.txt")
+//            try data.write(to: url, atomically:true,encoding:.utf8)
+//            let input = try String(contentsOf: url)
+            
+            let data = try JSONEncoder().encode(locations)
+            try data.write(to: savePath, options: [.atomic, .completeFileProtection])
+        } catch {
+            print("Unable to save data.")
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
 }
 
