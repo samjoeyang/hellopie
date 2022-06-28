@@ -480,7 +480,7 @@ struct CarLogoAddView:View{
 //            let url = getDocumentsDirectory().appendingPathComponent("message.txt")
 //            try data.write(to: url, atomically:true,encoding:.utf8)
 //            let input = try String(contentsOf: url)
-            
+
             let data = try JSONEncoder().encode(locations)
             try data.write(to: savePath, options: [.atomic, .completeFileProtection])
         } catch {
