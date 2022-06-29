@@ -1,17 +1,16 @@
-////
-////  ImageHelper.swift
-////  HelloPie
-////
-////  Created by SamjoeYang on 2022/6/28.
-////
-//// https://cloud.tencent.com/developer/article/1908883
-//import SwiftUI
 //
-//struct ImageHelper {
+//  ImageHelper.swift
+//  HelloPie
 //
+//  Created by SamjoeYang on 2022/6/28.
 //
-//    static let shared = ImageHelper()
-//    private init() {}
+// https://cloud.tencent.com/developer/article/1908883
+import SwiftUI
+
+struct ImageHelper {
+    static let shared = ImageHelper()
+    private init() {}
+    
 //
 //    // NSView 转 NSImage
 //    func imageFromView(cview: NSView) -> NSImage? {
@@ -261,4 +260,4 @@
 //        let result: CIImage? = transform.value(forKey: "outputImage") as? CIImage
 //        return result;
 //    }
-//}
+}

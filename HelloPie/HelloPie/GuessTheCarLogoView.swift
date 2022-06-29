@@ -8,41 +8,6 @@
 import SwiftUI
 import CoreData
 
-struct RoundedCorners: View {
-    var color: Color = .blue
-    var tl: CGFloat = 0.0
-    var tr: CGFloat = 0.0
-    var bl: CGFloat = 0.0
-    var br: CGFloat = 0.0
-    
-    var body: some View {
-        GeometryReader { geometry in
-            Path { path in
-                
-                let w = geometry.size.width
-                let h = geometry.size.height
-                
-                // Make sure we do not exceed the size of the rectangle
-                let tr = min(min(self.tr, h/2), w/2)
-                let tl = min(min(self.tl, h/2), w/2)
-                let bl = min(min(self.bl, h/2), w/2)
-                let br = min(min(self.br, h/2), w/2)
-                
-                path.move(to: CGPoint(x: w / 2.0, y: 0))
-                path.addLine(to: CGPoint(x: w - tr, y: 0))
-                path.addArc(center: CGPoint(x: w - tr, y: tr), radius: tr, startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 0), clockwise: false)
-                path.addLine(to: CGPoint(x: w, y: h - br))
-                path.addArc(center: CGPoint(x: w - br, y: h - br), radius: br, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 90), clockwise: false)
-                path.addLine(to: CGPoint(x: bl, y: h))
-                path.addArc(center: CGPoint(x: bl, y: h - bl), radius: bl, startAngle: Angle(degrees: 90), endAngle: Angle(degrees: 180), clockwise: false)
-                path.addLine(to: CGPoint(x: 0, y: tl))
-                path.addArc(center: CGPoint(x: tl, y: tl), radius: tl, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 270), clockwise: false)
-            }
-            .fill(self.color)
-        }
-    }
-}
-
 struct GuessTheCarLogoView: View {
     
     @Environment(\.managedObjectContext) var moc
@@ -268,42 +233,30 @@ struct CarLogoListView:View {
     
     var body: some View {
         NavigationView {
-            //            List(students) { student in
-            //                    Text(student.name ?? "Unknown")
-            //                }
+//            List(carlogolist) { carlogo in
+//                    Text(carlogo.enName ?? "Unknown")
+//                    Text(carlogo.cnName ?? "Unknown")
+//                    Text(carlogo.img ?? "Unknown")
+//                }
             List  {
                 
-                //                Section {
-                
-                //                    if isLogin == false {
-                //                        Button("Login") {
-                //                            isShowSheetView.toggle()
-                //                        }
-                //                        .sheet(isPresented: $isShowSheetView) {
-                //                            LoginView()
-                //                        }
-                //                    } else {
-                //                        Text("Login Info: \(storeUser.username)")
-                //                        Button("Logout") {
-                //                            UserDefaults.standard.removeObject(forKey: "UserData")
-                //                            username = ""
-                //
-                //                            isLogin=false
-                //                        }
-                //                    }
-                
-                //                    NavigationLink{
-                //                        Text("NavigationLink Content")
-                //                    } label:{
-                //                        Text("NavigationLink")
-                //                            .padding(0)
-                //                    }
-                //                }
-                
-                //                Button("Add Item [Count:\(String(itemsList.count))]") {
-                //                    itemsList.append(itemIndex)
-                //                    itemIndex += 1
-                //                }
+//                    if isLogin == false {
+//                        Button("Login") {
+//                            isShowSheetView.toggle()
+//                        }
+//                        .sheet(isPresented: $isShowSheetView) {
+//                            LoginView()
+//                        }
+//                    } else {
+//                        Text("Login Info: \(storeUser.username)")
+//                        Button("Logout") {
+//                            UserDefaults.standard.removeObject(forKey: "UserData")
+//                            username = ""
+//
+//                            isLogin=false
+//                        }
+//                    }
+
                 ForEach(carlogolist,id:\.self) { carlogo in
                     NavigationLink {
                         CarLogoDetailView(carlogo: carlogo)
@@ -372,7 +325,7 @@ struct CarLogoAddView:View{
 //    @ObservedObject var data:CarLogosData
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-//    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     
     @State private var enName = ""
     @State private var cnName = ""
@@ -396,11 +349,11 @@ struct CarLogoAddView:View{
                     TextField("Chinese Name", text:$cnName)
                 }
                 Section ("Select a picture") {
-//                    TextField("Car Logo image", text:$img)
                     ZStack {
-//                        Rectangle()
-//                            .fill(.white)
-//                            .frame(width:200,height: 200, alignment: .center)
+                        Rectangle()
+                            .fill(.white)
+                            .opacity(0.3)
+                            .frame(width:200,height: 200, alignment: .center)
 
                         Text("Tap to select a picture")
                             .foregroundColor(.gray)
@@ -451,8 +404,8 @@ struct CarLogoAddView:View{
                         newcarlogo.cnName = trimmedCn
                         newcarlogo.img    = self.img
                         
-                        print(self.image)
-
+                        saveImage()
+                        
                         try? self.moc.save()
 
 //                        let newcarlogo2 = CarLogoData(en:trimmedEn,cn:trimmedCn,img: img)
@@ -476,16 +429,20 @@ struct CarLogoAddView:View{
         image = Image(uiImage: inputImage)
     }
     func saveImage() {
-        do {
+//        let imageSaver = ImageSaver()
+//        imageSaver.writeToPhotoAlbum(image: inputImage)
+//        -----------------
+//        do {
 //            let url = getDocumentsDirectory().appendingPathComponent("message.txt")
 //            try data.write(to: url, atomically:true,encoding:.utf8)
 //            let input = try String(contentsOf: url)
 
-            let data = try JSONEncoder().encode(locations)
-            try data.write(to: savePath, options: [.atomic, .completeFileProtection])
-        } catch {
-            print("Unable to save data.")
-        }
+//            let data = try JSONEncoder().encode(locations)
+//            let data = inputImage?.jpegData(compressionQuality: 1.0)
+//            try data.write(to: savePath, options: [.atomic, .completeFileProtection])
+//        } catch {
+//            print("Unable to save data.")
+//        }
     }
     
     func getDocumentsDirectory() -> URL {

@@ -124,8 +124,8 @@
 			children = (
 				853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */,
 				853D4E9A2865DF6500BC5073 /* WelcomeView.swift */,
-				853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */,
 				853D4E602865DD1600BC5073 /* ContentView.swift */,
+				853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */,
 				8531FE332869D7DD007F08E3 /* ImageView.swift */,
 				852A35D8286B35FB00F10CCB /* ImageHelper.swift */,
 				8531FE2F2869D752007F08E3 /* ImagePicker.swift */,
