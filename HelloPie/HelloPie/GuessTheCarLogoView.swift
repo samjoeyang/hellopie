@@ -29,9 +29,34 @@ struct GuessTheCarLogoView: View {
     @State private var scoreTitle:LocalizedStringKey = ""
     @State private var scoreNumber:Int = 0
     
-    //    @State private var carlogoList = CarLogoCollection(sample: [CarLogo.defaultCarLogo])
+//    @State private var carlogoList = CarLogoDataCollection(sample: [CarLogo.defaultCarLogo])
+    @State private var carlogoList: [CarLogoData] = [
+        CarLogoData(en: "audi", cn: "奥迪", img: "audi"),
+        CarLogoData(en: "benz", cn: "奔驰", img: "benz"),
+        CarLogoData(en: "buick", cn: "别克", img: "buick"),
+        CarLogoData(en: "bmw", cn: "宝马", img: "bmw"),
+        CarLogoData(en: "citroen", cn: "雪铁龙", img: "citroen"),
+        CarLogoData(en: "ford", cn: "福特", img: "ford"),
+        CarLogoData(en: "lexus", cn: "雷克萨斯", img: "lexus"),
+        CarLogoData(en: "volvo", cn: "沃尔沃", img: "volvo"),
+        CarLogoData(en: "chevrolet", cn: "雪弗兰", img: "chevrolet"),
+        CarLogoData(en: "dazhong", cn: "大众", img: "dazhong"),
+        CarLogoData(en: "honda", cn: "本田", img: "honda"),
+        CarLogoData(en: "hyundai", cn: "现代", img: "hyundai"),
+        CarLogoData(en: "kia", cn: "起亚", img: "kia"),
+        CarLogoData(en: "mazda", cn: "马自达", img: "mazda"),
+        CarLogoData(en: "mitsubishi", cn: "三菱", img: "mitsubishi"),
+        CarLogoData(en: "nissan", cn: "尼桑", img: "nissan"),
+        CarLogoData(en: "peugeot", cn: "标致", img: "peugeot"),
+        CarLogoData(en: "renault", cn: "雷诺", img: "renault"),
+        CarLogoData(en: "skoda", cn: "斯科达", img: "skoda"),
+        CarLogoData(en: "smart", cn: "Smart", img: "smart"),
+        CarLogoData(en: "subaru", cn: "斯巴鲁", img: "subaru"),
+        CarLogoData(en: "suzuki", cn: "铃木", img: "suzuki"),
+        CarLogoData(en: "toyota", cn: "丰田", img: "toyota"),
+    ].shuffled()
     
-    @State private var carlogos = ["audi","benz","bmw","citroen","ford","lexus","volvo"].shuffled()
+//    @State private var carlogos = ["audi","benz","bmw","citroen","ford","lexus","volvo"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
@@ -46,8 +71,8 @@ struct GuessTheCarLogoView: View {
             
             ZStack {
                 RadialGradient(stops: [
-//                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
-                    .init(color: Color(red: 1.0, green: 1.0, blue: 1.0), location: 0.4),
+                    .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+//                    .init(color: Color(red: 1.0, green: 1.0, blue: 1.0), location: 0.4),
                     .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3)
                 ], center: .top, startRadius: 200, endRadius: 700)
                 .ignoresSafeArea()
@@ -56,9 +81,9 @@ struct GuessTheCarLogoView: View {
                 VStack {
                     Spacer()
                     
-//                    Text("Guess the Car Logo")
-//                        .font(.largeTitle.bold())
-//                        .foregroundColor(.white)
+                    Text("Guess the Car Logo")
+                        .font(.largeTitle.bold())
+                        .foregroundColor(.white)
                     
                     VStack(spacing: 15) {
                         VStack {
@@ -67,7 +92,7 @@ struct GuessTheCarLogoView: View {
                                 .foregroundStyle(.secondary)
                                 .font(.subheadline.weight(.heavy))
                             
-                            Text(carlogos[correctAnswer].uppercased())
+                            Text(carlogoList[correctAnswer].cnName.uppercased())
                                 .font(.largeTitle.weight(.semibold))
                             //                                .foregroundColor(.black)
                         }
@@ -77,7 +102,7 @@ struct GuessTheCarLogoView: View {
                             Button {
                                 flagTapped(number)
                             } label: {
-                                Image(carlogos[number])
+                                Image(carlogoList[number].img)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit) // 缩放比例
                                     .frame(width: 90, height: 90, alignment: .center) // 设置宽高
@@ -105,17 +130,17 @@ struct GuessTheCarLogoView: View {
             }
             .navigationTitle("Guess the Car Logo")
             .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarHidden(false)
+            .navigationBarHidden(true)
             //            navigationBarBackButtonHidden()
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink{
-                        CarLogoListView().environment(\.managedObjectContext, self.moc)
-                            .navigationBarHidden(true)
-                    } label: {
-                        Text("Edit")
-                    }
-                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    NavigationLink{
+//                        CarLogoListView().environment(\.managedObjectContext, self.moc)
+//                            .navigationBarHidden(true)
+//                    } label: {
+//                        Text("Edit")
+//                    }
+//                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { dismiss() }) {
                         Label("Back", systemImage: "chevron.backward")
@@ -163,7 +188,7 @@ struct GuessTheCarLogoView: View {
         }
         .phoneOnlyNavigationView()
     }
-    
+
     func updateNavigationBarColor(textColor:Color,bgColor:Color) {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: textColor]
         //            UINavigationBar.appearance().barTintColor = UIColor(themeColor)
@@ -182,7 +207,7 @@ struct GuessTheCarLogoView: View {
     }
     
     func askQuestion() {
-        carlogos.shuffle()
+        carlogoList.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
     
@@ -314,12 +339,12 @@ struct CarLogoListView:View {
     }
 }
 
-struct CarLogoListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CarLogoListView()
-            .environment(\.locale, .init(identifier: "zh-Hans"))
-    }
-}
+//struct CarLogoListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CarLogoListView()
+//            .environment(\.locale, .init(identifier: "zh-Hans"))
+//    }
+//}
 
 struct CarLogoAddView:View{
 //    @ObservedObject var data:CarLogosData
