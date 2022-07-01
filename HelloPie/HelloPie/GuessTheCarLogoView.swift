@@ -128,9 +128,9 @@ struct GuessTheCarLogoView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Guess the Car Logo")
-            .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarHidden(true)
+//            .navigationTitle("Guess the Car Logo")
+//            .navigationBarTitleDisplayMode(.automatic)
+//            .navigationBarHidden(true)
             //            navigationBarBackButtonHidden()
             .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
@@ -145,6 +145,7 @@ struct GuessTheCarLogoView: View {
                     Button(action: { dismiss() }) {
                         Label("Back", systemImage: "chevron.backward")
                     }
+                    .foregroundColor(.white)
                 }
             }
             //            .navigationBarItems(

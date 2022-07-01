@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CarLogoData: Codable, Identifiable, Hashable  {
     var id = UUID()
@@ -49,28 +50,10 @@ class CarLogosData:ObservableObject {
     }
 }
 
-//{
-//    "enName":"Audi";
-//    "cnName":"奥迪";
-//    "img":"audi";
-//},{
-//    "enName":"Benz";
-//    "cnName":"奔驰";
-//    "img":"benz";
-//},{
-//    "enName":"BMW";
-//    "cnName":"宝马";
-//    "img":"bmw";
-//},{
-//    "enName":"Citroen";
-//    "cnName":"雪铁龙";
-//    "img":"citroen";
-//},{
-//    "enName":"Ford";
-//    "cnName":"雪福特龙";
-//    "img":"ford";
-//},{
-//    "enName":"Ford";
-//    "cnName":"雪福特龙";
-//    "img":"ford";
-//}
+struct InnerAppsData<Content:View> {
+    var appName : String
+    var bgColor : Color
+    var Content : () -> Content
+    
+//    static let defaultData = InnerAppsData(appName: "App Name", bgColor: Color.pink, Content: { Text("Test View") as! Content })
+}

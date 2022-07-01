@@ -11,7 +11,7 @@
 		8531FE302869D752007F08E3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE2F2869D752007F08E3 /* ImagePicker.swift */; };
 		8531FE322869D7C6007F08E3 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE312869D7C6007F08E3 /* ImageSaver.swift */; };
 		8531FE342869D7DD007F08E3 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE332869D7DD007F08E3 /* ImageView.swift */; };
-		8531FE362869EB73007F08E3 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */; };
+		8531FE362869EB73007F08E3 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8531FE352869EB72007F08E3 /* FileHelper.swift */; };
 		853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */; };
 		853D4E612865DD1600BC5073 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E602865DD1600BC5073 /* ContentView.swift */; };
 		853D4E632865DD1A00BC5073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 853D4E622865DD1A00BC5073 /* Assets.xcassets */; };
@@ -28,6 +28,7 @@
 		853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E982865DF3900BC5073 /* DataObjects.swift */; };
 		853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9A2865DF6500BC5073 /* WelcomeView.swift */; };
 		853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */; };
+		85DDD44D286F180A002403FF /* HelloPieButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDD44C286F180A002403FF /* HelloPieButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 		8531FE2F2869D752007F08E3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8531FE312869D7C6007F08E3 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		8531FE332869D7DD007F08E3 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
+		8531FE352869EB72007F08E3 /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		853D4E5B2865DD1600BC5073 /* HelloPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		853D4E5E2865DD1600BC5073 /* HelloPieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieApp.swift; sourceTree = "<group>"; };
 		853D4E602865DD1600BC5073 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		853D4E982865DF3900BC5073 /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 		853D4E9A2865DF6500BC5073 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCarLogoView.swift; sourceTree = "<group>"; };
+		85DDD44C286F180A002403FF /* HelloPieButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +132,13 @@
 				852A35D8286B35FB00F10CCB /* ImageHelper.swift */,
 				8531FE2F2869D752007F08E3 /* ImagePicker.swift */,
 				8531FE312869D7C6007F08E3 /* ImageSaver.swift */,
-				8531FE352869EB72007F08E3 /* FileManager-DocumentsDirectory.swift */,
+				8531FE352869EB72007F08E3 /* FileHelper.swift */,
 				853D4E622865DD1A00BC5073 /* Assets.xcassets */,
 				853D4E672865DD1A00BC5073 /* Persistence.swift */,
 				853D4E8D2865DDED00BC5073 /* Utils.swift */,
 				853D4E8F2865DE1500BC5073 /* DataController.swift */,
 				853D4E982865DF3900BC5073 /* DataObjects.swift */,
+				85DDD44B286F17CF002403FF /* components */,
 				853D4E692865DD1A00BC5073 /* HelloPie.xcdatamodeld */,
 				853D4E912865DEC400BC5073 /* en.lproj */,
 				853D4E922865DECE00BC5073 /* zh-Hans.lpro */,
@@ -183,6 +186,14 @@
 				853D4E962865DF0C00BC5073 /* Localizable.strings */,
 			);
 			path = "zh-Hans.lpro";
+			sourceTree = "<group>";
+		};
+		85DDD44B286F17CF002403FF /* components */ = {
+			isa = PBXGroup;
+			children = (
+				85DDD44C286F180A002403FF /* HelloPieButtonView.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,12 +336,13 @@
 				853D4E682865DD1A00BC5073 /* Persistence.swift in Sources */,
 				853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */,
 				853D4E612865DD1600BC5073 /* ContentView.swift in Sources */,
-				8531FE362869EB73007F08E3 /* FileManager-DocumentsDirectory.swift in Sources */,
+				8531FE362869EB73007F08E3 /* FileHelper.swift in Sources */,
 				8531FE302869D752007F08E3 /* ImagePicker.swift in Sources */,
 				8531FE322869D7C6007F08E3 /* ImageSaver.swift in Sources */,
 				853D4E5F2865DD1600BC5073 /* HelloPieApp.swift in Sources */,
 				853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */,
 				853D4E6B2865DD1A00BC5073 /* HelloPie.xcdatamodeld in Sources */,
+				85DDD44D286F180A002403FF /* HelloPieButtonView.swift in Sources */,
 				852A35D9286B35FB00F10CCB /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HelloPie/Preview Content\"";
+				DEVELOPMENT_TEAM = XGQ3AYMB77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -529,6 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HelloPie/Preview Content\"";
+				DEVELOPMENT_TEAM = XGQ3AYMB77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

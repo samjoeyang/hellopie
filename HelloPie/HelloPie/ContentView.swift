@@ -34,12 +34,12 @@ struct ContentView: View {
     ]
     let miniApps:[String] = [
         "猜车标",
-        "猜车标",
-        "猜车标猜车标",
-        "猜车标猜车标猜车标猜车标",
     ]
     
-    
+    @State private var innerApps:[InnerAppsData] = [
+        InnerAppsData(appName: "猜车标", bgColor: .pink, Content: { GuessTheCarLogoView() } ),
+//        InnerAppsData(appName: "Test", bgColor: .red, Content: { ImageView() }),
+    ]
     var body: some View {
 
             VStack(alignment: .leading) {
@@ -51,39 +51,29 @@ struct ContentView: View {
                 
                 ScrollView {
                     LazyVGrid(columns: columnLayout) {
-    //                    ForEach(allColors.indices, id: \.self) { index in
-    //                        Button {
-    //                            selectedColor = allColors[index]
-    //                        } label: {
-    //                            RoundedRectangle(cornerRadius: 4.0)
-    //                                .aspectRatio(1.0, contentMode: ContentMode.fit)
-    //                                .foregroundColor(allColors[index])
-    //                        }
-    //                        .buttonStyle(.plain)
-    //                    }
+//                        PushButton(title: "猜车标", bgColor: .pink, isOn: $showCarLogoView)
+//                            .fullScreenCover(isPresented:$showCarLogoView,content: {
+//                                GuessTheCarLogoView()
+//                            })
+//
+//                        PushButton(title: "Test", bgColor: .pink, isOn: $showCarLogoView)
+//                            .fullScreenCover(isPresented:$showCarLogoView,content: {
+//                                CarLogoListView()
+//                            })
                         
-                        
-                        ForEach(miniApps.indices, id: \.self) { index in
-                            Button {
-                                showCarLogoView.toggle()
-                            }label: {
-                                Text(miniApps[index])
-                                    .font(.title3.weight(.heavy))
-                                    .foregroundColor(.white)
-                                    .padding(0)
-                                    .shadow(radius: 3)
-                            }
-                            .frame(width: 80, height: 80, alignment: .center)
-                            .background(allColors[index])
-                            .cornerRadius(15)
-                            .shadow(radius: 5)
-                            .buttonStyle(.plain)
-                            .fullScreenCover(isPresented:$showCarLogoView,content: {
-                                GuessTheCarLogoView()
-                            }).onTapGesture {
-                                showCarLogoView = true
-                            }
+                        ForEach(innerApps.indices, id: \.self) { index in
+                            PushButton(title: innerApps[index].appName, bgColor: allColors[index], isOn: $showCarLogoView)
+                                .fullScreenCover(isPresented:$showCarLogoView,content: {
+                                    innerApps[index].Content()
+                                })
                         }
+//                        ForEach(miniApps.indices, id: \.self) { index in
+//
+//                            PushButton(title: miniApps[index], bgColor: allColors[index], isOn: $showCarLogoView)
+//                                .fullScreenCover(isPresented:$showCarLogoView,content: {
+//                                    GuessTheCarLogoView()
+//                                })
+//                        }
                         
                     }
                     
