@@ -29,6 +29,8 @@
 		853D4E9B2865DF6500BC5073 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9A2865DF6500BC5073 /* WelcomeView.swift */; };
 		853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */; };
 		85DDD44D286F180A002403FF /* HelloPieButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDD44C286F180A002403FF /* HelloPieButtonView.swift */; };
+		85EA84772870750F00425F55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA84762870750F00425F55 /* LoginView.swift */; };
+		85EA847928707A0100425F55 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA847828707A0100425F55 /* test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		853D4E9A2865DF6500BC5073 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheCarLogoView.swift; sourceTree = "<group>"; };
 		85DDD44C286F180A002403FF /* HelloPieButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloPieButtonView.swift; sourceTree = "<group>"; };
+		85EA84762870750F00425F55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		85EA847828707A0100425F55 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				853D4E9A2865DF6500BC5073 /* WelcomeView.swift */,
 				853D4E602865DD1600BC5073 /* ContentView.swift */,
 				853D4E9C2865DFCD00BC5073 /* GuessTheCarLogoView.swift */,
+				85EA84762870750F00425F55 /* LoginView.swift */,
+				85EA847828707A0100425F55 /* test.swift */,
 				8531FE332869D7DD007F08E3 /* ImageView.swift */,
 				852A35D8286B35FB00F10CCB /* ImageHelper.swift */,
 				8531FE2F2869D752007F08E3 /* ImagePicker.swift */,
@@ -330,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8531FE342869D7DD007F08E3 /* ImageView.swift in Sources */,
+				85EA847928707A0100425F55 /* test.swift in Sources */,
 				853D4E9D2865DFCD00BC5073 /* GuessTheCarLogoView.swift in Sources */,
 				853D4E8E2865DDED00BC5073 /* Utils.swift in Sources */,
 				853D4E902865DE1500BC5073 /* DataController.swift in Sources */,
@@ -343,6 +350,7 @@
 				853D4E992865DF3900BC5073 /* DataObjects.swift in Sources */,
 				853D4E6B2865DD1A00BC5073 /* HelloPie.xcdatamodeld in Sources */,
 				85DDD44D286F180A002403FF /* HelloPieButtonView.swift in Sources */,
+				85EA84772870750F00425F55 /* LoginView.swift in Sources */,
 				852A35D9286B35FB00F10CCB /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.hellopie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -555,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.HelloPie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhenzhidaole.hellopie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

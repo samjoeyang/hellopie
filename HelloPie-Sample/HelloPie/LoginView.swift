@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct LoginView: View {
 
 //    @StateObject var userinfo = UserDataCollection(sample: <#T##[UserData]#>)

@@ -8,6 +8,32 @@
 import Foundation
 import SwiftUI
 
+struct UserData: Codable,Identifiable, Hashable {
+    
+//    enum CodingKeys: CodingKey {
+//        case username,pasword,realname,nickname,mobile,email,token,group,address
+//    }
+    var id = UUID()
+    var username: String = ""
+    var password: String = ""
+    
+    var realname: String = ""
+    var nickname: String = ""
+    var mobile: String = ""
+    var email: String = ""
+    
+    var token: String = ""
+    var group: String = "-1"
+    var address:[String] = []
+    
+    static let defaultUser = UserData(nickname:"Guset",group:"-1")
+}
+
+struct UserDataCollection: Codable {
+    var sample : [UserData]
+}
+
+
 struct CarLogoData: Codable, Identifiable, Hashable  {
     var id = UUID()
     var enName:String
