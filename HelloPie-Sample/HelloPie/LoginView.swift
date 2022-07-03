@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-
-//    @StateObject var userinfo = UserDataCollection(sample: <#T##[UserData]#>)
-//    @StateObject var userinfo = UserData()
-    @State private var username : String = ""
-    @State private var password : String = ""
+    
+    //    @StateObject var userinfo = UserDataCollection(sample: <#T##[UserData]#>)
+    @State private var userinfo = UserData()
     @FocusState private var emailFieldIsFocused: Bool
     @State private var nameComponents = PersonNameComponents()
     @State private var showAlert: Bool = false
@@ -29,67 +27,62 @@ struct LoginView: View {
                 Section {
                     TextField(
                         "Mobile",
-                        text: $username
-                        )
-                        .focused($emailFieldIsFocused)
-                        .onSubmit {
-//                            validate(name: username)
-                        }
-                        .textInputAutocapitalization(.never)
-                        .disableAutocorrection(true)
-//                        .border(.secondary)
+                        text:$userinfo.username
+                    )
+                    .focused($emailFieldIsFocused)
+                    .onSubmit {
+                        validate(mobile: userinfo.username)
+                    }
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                     
-                    SecureField(text: $password,
+                    SecureField(text: $userinfo.password,
                                 prompt: Text("Password")) {
-                                    Text("Password")
-                                }
+                                                                Text("Password")
+                                                            }
                     
                 } header: {
                     Text("")
-//                    Text("Mobile and Password")
+                    //                    Text("Mobile and Password")
                 }
                 
-//                Section {
-//                    TextField(
-//                            "Proper name",
-//                            value: $nameComponents,
-//                            format: .name(style: .medium)
-//                        )
-//                        .onSubmit {
-//    //                        validate(components: nameComponents)
-//                        }
-//                        .disableAutocorrection(true)
-//    //                    .border(.secondary)
-//                    Text(nameComponents.debugDescription)
-//                }
+                //                Section {
+                //                    TextField(
+                //                            "Proper name",
+                //                            value: $nameComponents,
+                //                            format: .name(style: .medium)
+                //                        )
+                //                        .onSubmit {
+                //    //                        validate(components: nameComponents)
+                //                        }
+                //                        .disableAutocorrection(true)
+                //    //                    .border(.secondary)
+                //                    Text(nameComponents.debugDescription)
+                //                }
                 
                 Button("Login") {
                     let encoder = JSONEncoder()
                     
-                    let user = UserData(username:username, password:password)
-                    
-                    if let userdata = try? encoder.encode(user) {
+                    if let userdata = try? encoder.encode(userinfo) {
                         UserDefaults.standard.set(userdata,forKey: "UserData")
                     }
-//                    showAlert.toggle()
+                    //                    showAlert.toggle()
                     dismiss()
                 }
-                .disabled(username.isEmptyEx || password.isEmptyEx)
+                .disabled(userinfo.username.isEmptyEx || userinfo.password.isEmptyEx)
                 
             }
             .navigationTitle("Login")
-            .navigationBarItems(trailing: {
-                Button("Cancel") {
-                    dismiss()
-                }
-            }())
-//            .alert("AlertTitle", isPresented: $showAlert) {
-//                Button("OK") {}
-//            } message: {
-//                Text("Mobile is \(username) \n  Password is \(password)")
-//
-//            }
-
+            .navigationBarItems(
+                trailing: { Button("Cancel") { dismiss() } }()
+            )
+            //            .alert("AlertTitle", isPresented: $showAlert) {
+            //                Button("OK") {}
+            //            } message: {
+            //                Text("Mobile is \(username) \n  Password is \(password)")
+            //
+            //            }
+            
         }
         .ignoresSafeArea()
     }
@@ -100,7 +93,7 @@ struct LoginView: View {
         }
         return true
     }
-
+    
 }
 
 

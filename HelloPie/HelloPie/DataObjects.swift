@@ -10,9 +10,9 @@ import SwiftUI
 
 struct UserData: Codable,Identifiable, Hashable {
     
-//    enum CodingKeys: CodingKey {
-//        case username,pasword,realname,nickname,mobile,email,token,group,address
-//    }
+    //    enum CodingKeys: CodingKey {
+    //        case username,pasword,realname,nickname,mobile,email,token,group,address
+    //    }
     var id = UUID()
     var username: String = ""
     var password: String = ""
@@ -27,12 +27,28 @@ struct UserData: Codable,Identifiable, Hashable {
     var address:[String] = []
     
     static let defaultUser = UserData(nickname:"Guset",group:"-1")
+    
+//    var isLogin:Bool {
+//        self.username.isEmptyEx || self.password.isEmptyEx || self.token.isEmptyEx
+//    }
+    
+    func savecache(userdata:UserData, keyStr:String){
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(userdata) {
+            UserDefaults.standard.set(data,forKey: keyStr)
+            //            self.isLogin=true
+        }
+    }
+    
+    func removeCache(keyStr:String){
+        UserDefaults.standard.removeObject(forKey: "UserData")
+        //        self.isLogin = false
+    }
 }
 
 struct UserDataCollection: Codable {
     var sample : [UserData]
 }
-
 
 struct CarLogoData: Codable, Identifiable, Hashable  {
     var id = UUID()
@@ -81,5 +97,34 @@ struct InnerAppsData<Content:View> {
     var bgColor : Color
     var Content : () -> Content
     
-//    static let defaultData = InnerAppsData(appName: "App Name", bgColor: Color.pink, Content: { Text("Test View") as! Content })
+    //    static let defaultData = InnerAppsData(appName: "App Name", bgColor: Color.pink, Content: { Text("Test View") as! Content })
+}
+
+
+struct Activity: Codable, Identifiable, Equatable {
+    var id = UUID()
+    var title: String
+    var description: String
+    var completionCount=0
+    
+    static let example = Activity(title:"Example activity", description: "This is a test activity.")
+}
+
+class Activities:ObservableObject {
+    @Published var activities:[Activity]{
+        didSet {
+            if let encoded=try? JSONEncoder().encode(activities){
+                UserDefaults.standard.set(encoded,forKey:"Activities")
+            }
+        }
+    }
+    init(){
+        if let saved=UserDefaults.standard.data(forKey:"Activities"){
+            if let decoded = try? JSONDecoder().decode([Activity].self,from:saved) {
+                activities=decoded
+                return
+            }
+        }
+        activities = []
+    }
 }

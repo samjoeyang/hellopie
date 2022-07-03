@@ -1,117 +1,140 @@
-////
-////  LoginView.swift
-////  HelloPie
-////
-////  Created by SamjoeYang on 2022/5/27.
-////
 //
+//  LoginView.swift
+//  HelloPie
 //
-//import SwiftUI
+//  Created by SamjoeYang on 2022/5/27.
 //
-//struct LoginView: View {
-//
-////    @StateObject var userinfo = UserDataCollection(sample: <#T##[UserData]#>)
-//    @State private var userinfo: UserData?
-//    
-//    @State private var username : String = ""
-//    @State private var password : String = ""
-//
-//    @FocusState private var emailFieldIsFocused: Bool
-//    @State private var nameComponents = PersonNameComponents()
-//
-//    @State private var showAlert: Bool = false
-//
-//    enum loginError: Error {
-//        case short, obvious, mobileisEmpty
-//    }
-//
-//    @Environment(\.dismiss) var dismiss
-//
-//    var body: some View {
-//        NavigationView {
-//            Form{
+
+import SwiftUI
+
+struct LoginView: View {
+
+//    @StateObject var userinfo = UserDataCollection(sample: <#T##[UserData]#>)
+    @State private var userinfo = UserData()
+
+    @FocusState private var emailFieldIsFocused: Bool
+    @State private var nameComponents = PersonNameComponents()
+
+    @State private var showAlert: Bool = false
+
+    enum loginError: Error {
+        case short, obvious, mobileisEmpty
+    }
+
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        NavigationView {
+            Form{
+                Section {
+                    TextField(
+                        "Mobile",
+                        text: $userinfo.username
+                        )
+                        .focused($emailFieldIsFocused)
+                        .onSubmit {
+//                            validate(mobile: username)
+                        }
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
+
+                    SecureField(text: $userinfo.password,
+                                prompt: Text("Password")) {
+                                    Text("Password")
+                                }
+
+                } header: {
+                    Text("")
+//                    Text("Mobile and Password")
+                }
+
 //                Section {
 //                    TextField(
-//                        "Mobile",
-//                        text: $username
+//                            "Proper name",
+//                            value: $nameComponents,
+//                            format: .name(style: .medium)
 //                        )
-//                        .focused($emailFieldIsFocused)
 //                        .onSubmit {
-////                            validate(name: username)
+//    //                        validate(components: nameComponents)
 //                        }
-//                        .textInputAutocapitalization(.never)
 //                        .disableAutocorrection(true)
-////                        .border(.secondary)
-//
-//                    SecureField(text: $password,
-//                                prompt: Text("Password")) {
-//                                    Text("Password")
-//                                }
-//
-//                } header: {
-//                    Text("")
-////                    Text("Mobile and Password")
+//    //                    .border(.secondary)
+//                    Text(nameComponents.debugDescription)
 //                }
-//
-////                Section {
-////                    TextField(
-////                            "Proper name",
-////                            value: $nameComponents,
-////                            format: .name(style: .medium)
-////                        )
-////                        .onSubmit {
-////    //                        validate(components: nameComponents)
-////                        }
-////                        .disableAutocorrection(true)
-////    //                    .border(.secondary)
-////                    Text(nameComponents.debugDescription)
-////                }
-//
-//                Button("Login") {
-//                    let encoder = JSONEncoder()
-//
+
+                Button("Login") {
+                    let encoder = JSONEncoder()
+
 //                    let user = UserData(username:username, password:password)
-//
-//                    if let userdata = try? encoder.encode(user) {
-//                        UserDefaults.standard.set(userdata,forKey: "UserData")
-//                    }
-////                    showAlert.toggle()
-//                    dismiss()
-//                }
-//                .disabled(username.isEmptyEx || password.isEmptyEx)
-//
+
+                    if let userdata = try? encoder.encode(userinfo) {
+                        UserDefaults.standard.set(userdata,forKey: "UserData")
+                    }
+//                    showAlert.toggle()
+                    dismiss()
+                }
+//                .disabled(userinfo.username.isEmptyEx || password.isEmptyEx)
+
+            }
+            .navigationTitle("Login")
+            .navigationBarItems(trailing: {
+                Button("Cancel") {
+                    dismiss()
+                }
+            }())
+//            .alert("AlertTitle", isPresented: $showAlert) {
+//                Button("OK") {}
+//            } message: {
+//                Text("Mobile is \(username) \n  Password is \(password)")
 //            }
-//            .navigationTitle("Login")
-//            .navigationBarItems(trailing: {
-//                Button("Cancel") {
-//                    dismiss()
-//                }
-//            }())
-////            .alert("AlertTitle", isPresented: $showAlert) {
-////                Button("OK") {}
-////            } message: {
-////                Text("Mobile is \(username) \n  Password is \(password)")
-////
-////            }
-//
+
+        }
+        .ignoresSafeArea()
+    }
+
+    func validate(mobile: String) throws -> Bool {
+        if mobile == "" {
+            throw loginError.mobileisEmpty
+        }
+        return true
+    }
+
+}
+
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
+            .environment(\.locale, .init(identifier: "zh-Hans"))
+    }
+}
+
+
+func chkLogin () -> Bool {
+    let decoder = JSONDecoder()
+    var chkLogin:Bool = false
+    
+    if let userdata = UserDefaults.standard.data(forKey: "UserData") {
+        if let user = try? decoder.decode(UserData.self,from: userdata) {
+            chkLogin = user.isLogin
+        }
+    }
+    
+    return chkLogin
+//    if chkLogin == false {
+//        Button("Login") {
+//            isShowSheetView.toggle()
 //        }
-//        .ignoresSafeArea()
-//    }
-//
-//    func validate(mobile: String) throws -> Bool {
-//        if mobile == "" {
-//            throw loginError.mobileisEmpty
+//        .sheet(isPresented: $isShowSheetView) {
+//            LoginView()
 //        }
-//        return true
+//    } else {
+//        Text("Login Info: \(storeUser.username)")
+//        Button("Logout") {
+//            UserDefaults.standard.removeObject(forKey: "UserData")
+//            username = ""
+//
+//            isLogin=false
+//        }
 //    }
-//
-//}
-//
-//
-//struct LoginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LoginView()
-//            .environment(\.locale, .init(identifier: "zh-Hans"))
-//    }
-//}
-//
+}

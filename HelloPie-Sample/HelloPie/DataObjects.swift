@@ -26,7 +26,7 @@ struct UserData: Codable {
     var group: String = "-1"
     var address:[String] = []
     
-    static let defaultUser = UserData(nickname:"Guset",group:"-1")
+    static let defaultUser = UserData(username:"",password:"",realname:"",nickname:"",mobile:"",email:"",token:"",group:"-1")
 }
 
 struct UserDataCollection: Codable {
